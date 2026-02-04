@@ -87,10 +87,12 @@ cmd_options:
 unit:
   assertion:
     Unit_StaticAssert_Positive_Basic_RTC:
+      tags: [device_lib][assert]
       <<: *level_2
       # Below tests fail in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/210
       disabled: [amd_windows]
     Unit_StaticAssert_Negative_Basic_RTC: *level_2
+      tags: [device_lib][assert]
     Unit_Assert_Positive_Basic_KernelPass: *level_2
     Unit_Assert_Positive_Basic_KernelFail:
       <<: *level_2
@@ -110,6 +112,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_atomicAnd_system_Positive_Peer_GPUs_Adjacent_Addresses:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -147,6 +150,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicXor_Positive_SameAddress: *level_2
@@ -162,6 +166,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_atomicXor_system_Positive_Peer_GPUs_Adjacent_Addresses:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -196,6 +201,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicMin_system_Positive_Peer_GPUs_Scattered_Addresses:
@@ -214,6 +220,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_atomicMax_system_Positive_Peer_GPUs_Adjacent_Addresses:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -340,11 +347,13 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_atomicAdd_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -378,9 +387,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicSub_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -408,9 +419,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicCAS_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -449,11 +462,13 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # SWDEV-435667: Below tests failing randomly in stress test on 01/12/23
       disabled: [amd_wsl]
     Unit_atomicExch_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -509,26 +524,35 @@ unit:
       tags: [rtc][integration]
   callback:
     Unit_hipApiName_Positive_Basic: *level_2
+      tags: [callback]
     Unit_hipApiName_Negative_ReservedIds: *level_2
     Unit_hipGetStreamDeviceId_Positive_Threaded_Basic: *level_2
+      tags: [callback]
     Unit_hipGetStreamDeviceId_Positive_Multithreaded_Basic:
+      tags: [multigpu][callback]
       <<: *level_2
       tags: [multigpu]
     Unit_hipGetStreamDeviceId_Negative_Parameters: *level_2
+      tags: [callback]
     Unit_hipKernelNameRef_Positive_Basic:
+      tags: [callback]
       <<: *level_2
       # (amd_windows) Note: intermittent Seg fault failure
       # (amd_wsl) Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipKernelNameRef_Negative_Parameters:
+      tags: [callback]
       <<: *level_2
       # (amd_windows) Note: intermittent Seg fault failure
       # (amd_wsl) Note: intermittent Seg fault failure
       # (amd_wsl) Note: Linux disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipKernelNameRefByPtr_Positive_Basic: *level_2
+      tags: [callback]
     Unit_hipKernelNameRefByPtr_Negative_StreamNullptr: *level_2
+      tags: [callback]
     Unit_hipKernelNameRefByPtr_Negative_KernelNullptr: *level_2
+      tags: [callback]
   channelDescriptor:
     Unit_ChannelDescriptor_Positive_Basic_1D:
       <<: *level_2
@@ -554,14 +578,17 @@ unit:
       disabled: [amd_windows, amd_wsl]
   clock:
     Unit_hipClock64_Positive_Basic:
+      tags: [device_lib][timing]
       <<: *level_2
       # SWDEV-555665
       disabled: [amd_windows]
     Unit_hipClock_Positive_Basic:
+      tags: [device_lib][timing]
       <<: *level_2
       # SWDEV-555665
       disabled: [amd_windows]
     Unit_hipWallClock64_Positive_Basic: *level_2
+      tags: [device_lib][timing]
   compiler:
     Unit_hipClassKernel_Overload_Override: *level_2
       tags: [rtc][integration]
@@ -596,18 +623,31 @@ unit:
       disabled: [amd_linux]
   complex:
     Unit_Device_Complex_Unary_Device_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_Unary_Host_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_Binary_Device_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_Binary_Host_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_hipCfma_Device_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_hipCfma_Host_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_make_Complex_Device_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_make_Complex_Host_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_make_hipComplex_Device_Positive: *level_2
+      tags: [complex]
     Unit_Device_make_hipComplex_Host_Positive: *level_2
+      tags: [complex]
     Unit_Device_Complex_Cast_Device_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_Cast_Host_Sanity_Positive: *level_2
+      tags: [device_lib][types]
     Unit_Device_Complex_Constructor_Host: *level_2
+      tags: [device_lib][types]
   context:
     Unit_hipDeviceGetPCIBusId_Functional: *level_2
     Unit_hipDrvMemcpy_Functional: *level_2
@@ -694,6 +734,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][groups]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -701,6 +742,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipCGMultiGridGroupType_Barrier:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -740,6 +782,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][launch]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -751,6 +794,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][groups]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -758,6 +802,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Getters_Positive_Base_Type:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -774,6 +819,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Positive_Sync:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -927,6 +973,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -943,6 +990,7 @@ unit:
       tags: [device_mgmt][query]
     Print_Out_Device_Count: *level_2
     Unit_hipGetDeviceProperties_ArchPropertiesTst:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -985,6 +1033,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -996,10 +1045,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipSetGetDevice_Positive_Threaded_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1023,6 +1074,7 @@ unit:
     Unit_hipDeviceGetUuid_Negative: *level_2
       tags: [device_mgmt][query]
     Unit_hipDeviceGetUuid_From_RocmInfo:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1065,10 +1117,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipDeviceEnablePeerAccess_negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1087,6 +1141,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1095,6 +1150,7 @@ unit:
     Unit_hipExtGetLinkTypeAndHopCount_Negative_Parameters: *level_2
       tags: [device_mgmt][query]
     Unit_hipDeviceSetLimit_SetGet:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1134,6 +1190,7 @@ unit:
     Unit_hipDeviceGetSetLimit_Scratch_SetBeforeKernelLaunch: *level_2
       tags: [device_mgmt][config]
     Unit_hipDeviceGetSetLimit_Scratch_MultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1218,6 +1275,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][config][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1241,10 +1299,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipGetProcAddress_SetGetMemPoolAPIs:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1332,6 +1392,7 @@ unit:
     Unit_ldg: *level_2
       tags: [device_lib][bitops]
     Unit_threadfence_system:
+      tags: [multigpu]
       tags: [multigpu][device_lib]
       tags: [multigpu]
       tags: [multigpu]
@@ -1760,6 +1821,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [error_handling][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1843,6 +1905,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [error_handling][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1853,6 +1916,7 @@ unit:
     Unit_hipExtGetLastError_Positive_Threaded: *level_2
       tags: [error_handling]
     Unit_hipExtGetLastError_with_hipMemcpyPeerAsync:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1929,6 +1993,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][sync][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1946,6 +2011,7 @@ unit:
       <<: *level_2
       disabled: [amd_windows]
     Unit_hipEventRecord_Negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2028,6 +2094,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -2039,10 +2106,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipEventQuery_DifferentDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2205,74 +2274,92 @@ unit:
       tags: [compiler]
   gl_interop:
     Unit_hipGLGetDevices_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGLGetDevices_Positive_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGLGetDevices_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterBuffer_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterBuffer_Positive_Register_Twice:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterBuffer_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterImage_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterImage_Positive_Register_Twice:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsGLRegisterImage_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsMapResources_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsMapResources_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
     Unit_hipGraphicsResourceGetMappedPointer_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsResourceGetMappedPointer_Positive_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
     Unit_hipGraphicsResourceGetMappedPointer_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
     Unit_hipGraphicsSubResourceGetMappedArray_Positive_Basic:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_wsl]
     Unit_hipGraphicsSubResourceGetMappedArray_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
     Unit_hipGraphicsUnmapResources_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
     Unit_hipGraphicsUnregisterResource_Negative_Parameters:
+      tags: [interop][gl]
       <<: *level_2
       # SWDEV-439004: Below tests failing randomly in CQE staging
       disabled: [amd_linux, amd_wsl]
@@ -2353,6 +2440,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2365,6 +2453,7 @@ unit:
     Unit_hipGraphClone_Negative: *level_2
       tags: [graph][lifecycle]
     Unit_hipGraphClone_Functional:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2628,6 +2717,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2824,6 +2914,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][capture][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2846,6 +2937,7 @@ unit:
     Unit_hipStreamBeginCapture_MultipleStreams_ReuseEvent: *level_2
       tags: [graph][capture]
     Unit_hipGraphAddMemcpyNode1D_Functional:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2905,6 +2997,7 @@ unit:
     Unit_hipStreamBeginCapture_EndingCapturewhenCaptureInProgress: *level_2
       tags: [graph][capture]
     Unit_hipStreamBeginCapture_MultiGPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3182,6 +3275,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][exec][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3369,6 +3463,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3380,6 +3475,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3388,6 +3484,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipGraphClone_multi_GPU_test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3425,6 +3522,7 @@ unit:
     Unit_hipGraphUpload_Functional: *level_2
       tags: [graph][exec]
     Unit_hipGraphUpload_Functional_multidevice_test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3521,6 +3619,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][exec][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3582,6 +3681,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3593,6 +3693,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3601,6 +3702,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipGraphAddMemAllocNode_Functional_4:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3726,6 +3828,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3741,9 +3844,13 @@ unit:
       tags: [graph][node]
   hip_specific:
     Unit_Device__hip_hc_add8pk_Sanity_Positive: *level_2
+      tags: [device_lib][hip_ext]
     Unit_Device__hip_hc_sub8pk_Sanity_Positive: *level_2
+      tags: [device_lib][hip_ext]
     Unit_Device__hip_hc_mul8pk_Sanity_Positive: *level_2
+      tags: [device_lib][hip_ext]
     Unit_Device__hip_hc_8pk_Negative_Parameters_RTC: *level_2
+      tags: [device_lib][hip_ext]
     Unit_Device__hip_check_VGPRs: *level_2
   kernel:
     Unit_hipMemFaultStackAllocation_Check: *level_2
@@ -3817,6 +3924,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][kernel][language]
       tags: [multigpu]
       tags: [multigpu][kernel]
@@ -3859,150 +3967,198 @@ unit:
       disabled: [amd_windows]
   library:
     Unit_library_negative: *level_2
+      tags: [module][library]
       tags: [module]
     Unit_hip_library_load_co: *level_2
+      tags: [module][library]
       tags: [module]
     Unit_hipKernelGetParamInfo_Negative: *level_2
+      tags: [module][library]
       tags: [module]
     Unit_hip_library_load_rtc: *level_2
+      tags: [module][library]
       tags: [module]
   math:
     Unit_Device_sin_Accuracy_Positive_float: *level_2
     Unit_Device_sin_Accuracy_Positive_double: *level_2
     Unit_Device_sin_sinf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cos_Accuracy_Positive_float: *level_2
     Unit_Device_cos_Accuracy_Positive_double: *level_2
     Unit_Device_cos_cosf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_tan_Accuracy_Positive_float: *level_2
     Unit_Device_tan_Accuracy_Positive_double: *level_2
     Unit_Device_tan_tanf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_asin_Accuracy_Positive_float: *level_2
     Unit_Device_asin_Accuracy_Positive_double: *level_2
     Unit_Device_asin_asinf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_acos_Accuracy_Positive_float: *level_2
     Unit_Device_acos_Accuracy_Positive_double: *level_2
     Unit_Device_acos_acosf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_atan_Accuracy_Positive_float: *level_2
     Unit_Device_atan_Accuracy_Positive_double: *level_2
     Unit_Device_atan_atanf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_sinh_Accuracy_Positive_float: *level_2
     Unit_Device_sinh_Accuracy_Positive_double: *level_2
     Unit_Device_sinh_sinhf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cosh_Accuracy_Positive_float: *level_2
     Unit_Device_cosh_Accuracy_Positive_double: *level_2
     Unit_Device_cosh_coshf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_tanh_Accuracy_Positive_float: *level_2
     Unit_Device_tanh_Accuracy_Positive_double: *level_2
     Unit_Device_tanh_tanhf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_asinh_Accuracy_Positive_float: *level_2
     Unit_Device_asinh_Accuracy_Positive_double: *level_2
     Unit_Device_asinh_asinhf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_acosh_Accuracy_Positive_float: *level_2
     Unit_Device_acosh_Accuracy_Positive_double: *level_2
     Unit_Device_acosh_acoshf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_atanh_Accuracy_Positive_float: *level_2
     Unit_Device_atanh_Accuracy_Positive_double: *level_2
     Unit_Device_atanh_atanhf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_sinpi_Accuracy_Positive_float: *level_2
     Unit_Device_sinpi_Accuracy_Positive_double:
       <<: *level_2
       # special values test, fix: comment out [HEX_DBL(-, 1, fffffffffffff, +, 31), HEX_DBL(+, 1, fffffffffffff, +, 31)]
       <<: *disabled_linux
     Unit_Device_sinpi_sinpif_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cospi_Accuracy_Positive_float: *level_2
     Unit_Device_cospi_Accuracy_Positive_double:
       <<: *level_2
       # special values test, fix: comment out [HEX_DBL(-, 1, fffffffffffff, +, 31), HEX_DBL(+, 1, fffffffffffff, +, 31)]
       <<: *disabled_linux
     Unit_Device_cospi_cospif_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_atan2_Accuracy_Positive: *level_2
     Unit_Device_atan2_atan2f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_sincos_Accuracy_Positive_float: *level_2
     Unit_Device_sincos_Accuracy_Positive_double: *level_2
     Unit_Device_sincos_sincosf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_sincospi_Accuracy_Positive_float: *level_2
     Unit_Device_sincospi_Accuracy_Positive_double:
       <<: *level_2
       # special values test, fix: comment out [HEX_DBL(-, 1, fffffffffffff, +, 31), HEX_DBL(+, 1, fffffffffffff, +, 31)]
       <<: *disabled_linux
     Unit_Device_sincospi_sincospif_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fabs_Accuracy_Positive_float: *level_2
     Unit_Device_fabs_Accuracy_Positive_double: *level_2
     Unit_Device_fabs_fabsf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_copysign_Accuracy_Positive: *level_2
     Unit_Device_copysign_copysignf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fmax_Accuracy_Positive: *level_2
     Unit_Device_fmax_fmaxf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fmin_Accuracy_Positive: *level_2
     Unit_Device_fmin_fminf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_nextafter_Accuracy_Positive: *level_2
     Unit_Device_nextafter_nextafterf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fma_Accuracy_Positive:
       <<: *level_2
       # special values test, fix: comment out [-3.0f, -1.5f, HEX_FLT(-, 0, 00000c, -, 126), HEX_FLT(-, 0, 000006, -, 126), +3.0f, 1.5f, HEX_FLT(+, 0, 00000c, -, 126), HEX_FLT(+, 0, 000006, -, 126),]
       <<: *disabled_linux
     Unit_Device_fma_fmaf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fdividef_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_fdividef_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_isfinite_Accuracy_Positive_float: *level_2
     Unit_Device_isfinite_Accuracy_Positive_double: *level_2
     Unit_Device_isfinite_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_isinf_Accuracy_Positive_float: *level_2
     Unit_Device_isinf_Accuracy_Positive_double: *level_2
     Unit_Device_isinf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_isnan_Accuracy_Positive_float: *level_2
     Unit_Device_isnan_Accuracy_Positive_double: *level_2
     Unit_Device_isnan_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_signbit_Accuracy_Positive_float: *level_2
     Unit_Device_signbit_Accuracy_Positive_double: *level_2
     Unit_Device_signbit_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fmod_Accuracy_Positive: *level_2
     Unit_Device_fmod_fmodf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_remainder_Accuracy_Positive: *level_2
     Unit_Device_remainder_remainder_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_fdim_Accuracy_Positive:
       <<: *level_2
       # special values test, fix: comment out [HEX_DBL(-, 1, fffffffffffff, +, 31), HEX_DBL(-, 1, fffffffffffff, +, 30), HEX_DBL(+, 1, fffffffffffff, +, 31), HEX_DBL(+, 1, fffffffffffff, +, 30)]
       <<: *disabled_linux
     Unit_Device_fdim_fdimf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_trunc_Accuracy_Positive_float: *level_2
     Unit_Device_trunc_Accuracy_Positive_double: *level_2
     Unit_Device_trunc_truncf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_round_Accuracy_Positive_float: *level_2
     Unit_Device_round_Accuracy_Positive_double: *level_2
     Unit_Device_round_roundf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rint_Accuracy_Positive_float: *level_2
     Unit_Device_rint_Accuracy_Positive_double: *level_2
     Unit_Device_rint_rintf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_nearbyint_Accuracy_Positive_float: *level_2
     Unit_Device_nearbyint_Accuracy_Positive_double: *level_2
     Unit_Device_nearbyint_nearbyintf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_ceil_Accuracy_Positive_float: *level_2
     Unit_Device_ceil_Accuracy_Positive_double: *level_2
     Unit_Device_ceil_ceilf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_floor_Accuracy_Positive_float: *level_2
     Unit_Device_floor_Accuracy_Positive_double: *level_2
     Unit_Device_floor_floorf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_lrint_Accuracy_Positive_float: *level_2
     Unit_Device_lrint_Accuracy_Positive_double: *level_2
     Unit_Device_lrint_lrintf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_lround_Accuracy_Positive_float: *level_2
     Unit_Device_lround_Accuracy_Positive_double: *level_2
     Unit_Device_lround_lroundf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_llrint_Accuracy_Positive_float: *level_2
     Unit_Device_llrint_Accuracy_Positive_double: *level_2
     Unit_Device_llrint_llrintf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_llround_Accuracy_Positive_float: *level_2
     Unit_Device_llround_Accuracy_Positive_double: *level_2
     Unit_Device_llround_llroundf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_remquo_Accuracy_Positive:
       <<: *level_2
       # TODO special value test error, fix: comment out special value test
       <<: *disabled_linux
     Unit_Device_remquo_remquof_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_modf_Accuracy_Positive_float: *level_2
     Unit_Device_modf_Accuracy_Positive_double: *level_2
     Unit_Device_modf_modff_Negative_RTC:
+      tags: [device_lib][math]
       <<: *level_2
       # float* can be casted to double* [math_remainder_rounding_negative_kernels_rtc.hh:247]
       <<: *disabled_linux
@@ -4115,7 +4271,9 @@ unit:
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___brev_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___brevll_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___clz_Sanity_Positive: *level_2
     Unit_Device___clzll_Sanity_Positive:
       <<: *level_2
@@ -4124,242 +4282,369 @@ unit:
     Unit_Device___ffs_Sanity_Positive: *level_2
     Unit_Device___ffsll_Sanity_Positive: *level_2
     Unit_Device___popc_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___popcll_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___mul24_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___umul24_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___funnelshift_l_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___funnelshift_lc_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___funnelshift_r_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___funnelshift_rc_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___hadd_Sanity_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 4 tests are disable due to defect EXSWHTEC-355
       disabled: [amd_windows]
     Unit_Device___uhadd_Sanity_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 4 tests are disable due to defect EXSWHTEC-355
       disabled: [amd_windows]
     Unit_Device___rhadd_Sanity_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 4 tests are disable due to defect EXSWHTEC-355
       disabled: [amd_windows]
     Unit_Device___urhadd_Sanity_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 4 tests are disable due to defect EXSWHTEC-355
       disabled: [amd_windows]
     Unit_Device___mulhi_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___umulhi_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___mul64hi_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___umul64hi_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___sad_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___usad_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___byte_perm_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_sqrtf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_sqrt_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_sqrt_sqrtf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rsqrtf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_rsqrt_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_rsqrt_rsqrtf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cbrt_Accuracy_Positive_float: *level_2
     Unit_Device_cbrt_Accuracy_Positive_double: *level_2
     Unit_Device_cbrt_cbrtf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rcbrtf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_rcbrt_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_rcbrt_rcbrtf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_hypot_Accuracy_Positive: *level_2
     Unit_Device_hypot_hypotf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rhypot_Accuracy_Positive: *level_2
     Unit_Device_rhypot_rhypotf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_norm3d_Accuracy_Positive: *level_2
     Unit_Device_norm3d_norm3df_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rnorm3d_Accuracy_Positive: *level_2
     Unit_Device_rnorm3d_rnorm3df_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_norm4d_Accuracy_Positive: *level_2
     Unit_Device_norm4d_norm4df_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rnorm4d_Accuracy_Positive: *level_2
     Unit_Device_rnorm4d_rnorm4df_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_norm_Sanity_Positive: *level_2
     Unit_Device_norm_normf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_rnorm_Sanity_Positive: *level_2
     Unit_Device_rnorm_rnormf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_log_Accuracy_Positive_float: *level_2
     Unit_Device_log_Accuracy_Positive_double: *level_2
     Unit_Device_log_logf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_log2_Accuracy_Positive_float: *level_2
     Unit_Device_log2_Accuracy_Positive_double: *level_2
     Unit_Device_log2_log2f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_log10_Accuracy_Positive_float: *level_2
     Unit_Device_log10_Accuracy_Positive_double: *level_2
     Unit_Device_log10_log10f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_log1p_Accuracy_Positive_float: *level_2
     Unit_Device_log1p_Accuracy_Positive_double:
       <<: *level_2
       # special values test, fix: comment out [HEX_DBL(-, 0, 0000000000001, -, 1022)]
       disabled: [amd_linux]
     Unit_Device_log1p_log1pf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_logb_Accuracy_Positive_float: *level_2
     Unit_Device_logb_Accuracy_Positive_double: *level_2
     Unit_Device_logb_logbf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_ilogbf_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 2 tests are disable due to defect EXSWHTEC-369
       disabled: [amd_linux, amd_windows]
     Unit_Device_ilogb_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below 2 tests are disable due to defect EXSWHTEC-369
       disabled: [amd_linux, amd_windows]
     Unit_Device_ilogb_ilogbf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_erf_Accuracy_Positive_float: *level_2
     Unit_Device_erf_Accuracy_Positive_double: *level_2
     Unit_Device_erf_erff_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfc_Accuracy_Positive_float: *level_2
     Unit_Device_erfc_Accuracy_Positive_double: *level_2
     Unit_Device_erfc_erfcf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfinvf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfinv_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfinv_erfinvf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcinvf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcinv_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcinv_erfcinvf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcxf_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcx_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_erfcx_erfcxf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdff_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdf_normcdff_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdfinvf_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdfinv_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_normcdfinv_normcdfinvf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_tgammaf_Accuracy_Limited_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # TODO
       disabled: [amd_linux]
     Unit_Device_tgamma_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_tgamma_tgammaf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_lgammaf_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_lgamma_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_lgamma_lgammaf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i0f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i0_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i0_cyl_bessel_i0f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i1f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i1_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_cyl_bessel_i1_cyl_bessel_i1f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_y0f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_y0_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_y0_y0f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_y1f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_y1_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_y1_y1f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_ynf_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_yn_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_yn_ynf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_j0f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_j0_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_j0_j0f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_j1f_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_j1_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_j1_j1f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_jnf_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_jn_Accuracy_Limited_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_jn_jnf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2int_rd_Positive: *level_2
     Unit_Device___double2int_rn_Positive: *level_2
     Unit_Device___double2int_ru_Positive: *level_2
     Unit_Device___double2int_rz_Positive: *level_2
     Unit_Device___double2int_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2uint_rd_Positive: *level_2
     Unit_Device___double2uint_rn_Positive: *level_2
     Unit_Device___double2uint_ru_Positive: *level_2
     Unit_Device___double2uint_rz_Positive: *level_2
     Unit_Device___double2uint_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2ll_rd_Positive: *level_2
     Unit_Device___double2ll_rn_Positive: *level_2
     Unit_Device___double2ll_ru_Positive: *level_2
     Unit_Device___double2ll_rz_Positive: *level_2
     Unit_Device___double2ll_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2ull_rd_Positive: *level_2
     Unit_Device___double2ull_rn_Positive: *level_2
     Unit_Device___double2ull_ru_Positive: *level_2
     Unit_Device___double2ull_rz_Positive: *level_2
     Unit_Device___double2ull_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2float_rd_Positive: *level_2
     Unit_Device___double2float_rn_Positive: *level_2
     Unit_Device___double2float_ru_Positive: *level_2
     Unit_Device___double2float_rz_Positive: *level_2
     Unit_Device___double2float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2hiint_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2hiint_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2loint_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___double2loint_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___double_as_longlong_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___double_as_longlong_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2int_rd_Positive: *level_2
     Unit_Device___float2int_rn_Positive: *level_2
     Unit_Device___float2int_ru_Positive: *level_2
     Unit_Device___float2int_rz_Positive: *level_2
     Unit_Device___float2int_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2uint_rd_Positive: *level_2
     Unit_Device___float2uint_rn_Positive: *level_2
     Unit_Device___float2uint_ru_Positive: *level_2
     Unit_Device___float2uint_rz_Positive: *level_2
     Unit_Device___float2uint_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2ll_rd_Positive: *level_2
     Unit_Device___float2ll_rn_Positive: *level_2
     Unit_Device___float2ll_ru_Positive: *level_2
     Unit_Device___float2ll_rz_Positive: *level_2
     Unit_Device___float2ll_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2ull_rd_Positive: *level_2
     Unit_Device___float2ull_rn_Positive: *level_2
     Unit_Device___float2ull_ru_Positive: *level_2
     Unit_Device___float2ull_rz_Positive: *level_2
     Unit_Device___float2ull_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float_as_int_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___float_as_int_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___float_as_uint_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___float_as_uint_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___int2float_rd_Positive: *level_2
     Unit_Device___int2float_rn_Positive: *level_2
     Unit_Device___int2float_ru_Positive: *level_2
     Unit_Device___int2float_rz_Positive: *level_2
     Unit_Device_int2float___Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___uint2float_rd_Positive: *level_2
     Unit_Device___uint2float_rn_Positive: *level_2
     Unit_Device___uint2float_ru_Positive: *level_2
     Unit_Device___uint2float_rz_Positive: *level_2
     Unit_Device___uint2float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___int2double_rn_Positive: *level_2
     Unit_Device___int2double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___uint2double_rn_Positive: *level_2
     Unit_Device___uint2double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___ll2float_rd_Positive: *level_2
     Unit_Device___ll2float_rn_Positive: *level_2
     Unit_Device___ll2float_ru_Positive: *level_2
     Unit_Device___ll2float_rz_Positive: *level_2
     Unit_Device___ll2float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___ull2float_rd_Positive: *level_2
     Unit_Device___ull2float_rn_Positive: *level_2
     Unit_Device___ull2float_ru_Positive: *level_2
     Unit_Device___ull2float_rz_Positive: *level_2
     Unit_Device___ull2float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___ll2double_rd_Positive: *level_2
     Unit_Device___ll2double_rn_Positive: *level_2
     Unit_Device___ll2double_ru_Positive: *level_2
     Unit_Device___ll2double_rz_Positive: *level_2
     Unit_Device___ll2double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___ull2double_rd_Positive: *level_2
     Unit_Device___ull2double_rn_Positive: *level_2
     Unit_Device___ull2double_ru_Positive: *level_2
     Unit_Device___ull2double_rz_Positive: *level_2
     Unit_Device___ull2double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___int_as_float_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___int_as_float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___uint_as_float_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___uint_as_float_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___longlong_as_double_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___longlong_as_double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___hiloint2double_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___hiloint2double_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___half2int_rn_Accuracy_Positive:
       <<: *level_2
       # (amd_windows) Below tests cause timeout in stress test of 09/02/24
@@ -4472,10 +4757,12 @@ unit:
       # (nvidia_linux) TODO rounding error
       disabled: [amd_windows, nvidia_linux]
     Unit_Device___half_as_short_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___half_as_ushort_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
@@ -4593,10 +4880,12 @@ unit:
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___short_as_half_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___ushort_as_half_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
@@ -4621,101 +4910,135 @@ unit:
       # rounding float16 types not supported?
       <<: *disabled_linux
     Unit_Device___float2half_rd_SmallVals_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2half_ru_SmallVals_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___float2half_rz_SmallVals_Sanity_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device___half2float_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device_exp_Accuracy_Positive_float: *level_2
     Unit_Device_exp_Accuracy_Positive_double: *level_2
     Unit_Device_exp_expf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_exp2_Accuracy_Positive_float: *level_2
     Unit_Device_exp2_Accuracy_Positive_double: *level_2
     Unit_Device_exp2_exp2f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_expm1_Accuracy_Positive_float: *level_2
     Unit_Device_expm1_Accuracy_Positive_double: *level_2
     Unit_Device_expm1_expm1f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_exp10f_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_exp10_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_exp10_exp10f_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_frexpf_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_frexp_Accuracy_Positive: *level_2
+      tags: [device_lib][math]
     Unit_Device_frexp_frexpf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_pow_Accuracy_Positive: *level_2
     Unit_Device_pow_powf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_ldexp_Accuracy_Positive: *level_2
     Unit_Device_ldexp_ldexpf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_powi_Accuracy_Positive: *level_2
     Unit_Device_powi_powif_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_scalbn_Accuracy_Positive: *level_2
     Unit_Device_scalbn_scalbnf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device_scalbln_Accuracy_Positive:
       <<: *level_2
       # long int exponents are too large, works fine with int
       disabled: [amd_linux]
     Unit_Device_scalbln_scalblnf_Negative_RTC: *level_2
+      tags: [device_lib][math]
     Unit_Device___half2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device_make_half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___halves2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___low2half_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___high2half_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___low2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___high2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___lowhigh2highlow_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___lows2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___highs2half2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___float2half2_rn_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___floats2half2_rn_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___float22half2_rn_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___low2float_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___high2float_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
     Unit_Device___half22float2_Accuracy_Positive:
+      tags: [device_lib][math]
       <<: *level_2
       # Below tests cause timeout in stress test of 09/02/24
       disabled: [amd_windows]
@@ -5131,6 +5454,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5156,6 +5480,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5168,6 +5493,7 @@ unit:
     Unit_hipMemcpy2DToArray_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2DToArrayAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5231,6 +5557,7 @@ unit:
       tags: [hipMemcpy3D]
       tags: [hipMemcpy3D]
       tags: [hipMemcpy3D]
+      tags: [hipMemcpy3D]
       <<: *level_2
       tags: [hipMemcpy3D]
     Unit_hipMemcpy3D_ExtentValidation: *level_2
@@ -5240,6 +5567,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy3D_multiDevice_Basic_Size_Test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5271,6 +5599,7 @@ unit:
       tags: [hipMemcpy3DAsync]
       tags: [hipMemcpy3DAsync]
       tags: [hipMemcpy3DAsync]
+      tags: [hipMemcpy3DAsync]
       <<: *level_2
       tags: [hipMemcpy3DAsync]
     Unit_hipMemcpy3DAsync_ExtentValidation: *level_2
@@ -5285,6 +5614,7 @@ unit:
     Unit_hipMemcpy3DAsync_Basic_Size_Test: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyParam2D_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5324,6 +5654,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5355,6 +5686,7 @@ unit:
     Unit_hipMemcpyParam2DAsync_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2D_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5401,12 +5733,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy2DAsync_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5444,12 +5778,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy2DFromArray_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5484,6 +5820,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5492,6 +5829,7 @@ unit:
     Unit_hipMemcpy2DFromArray_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2DFromArrayAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5559,6 +5897,7 @@ unit:
       tags: [hipMemcpyAtoH]
       tags: [hipMemcpyAtoH]
       tags: [hipMemcpyAtoH]
+      tags: [hipMemcpyAtoH]
       <<: *level_2
       tags: [hipMemcpyAtoH]
     Unit_hipMemcpyAtoH_multiDevice_PeerDeviceContext:
@@ -5592,6 +5931,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5602,6 +5942,7 @@ unit:
     Unit_hipMemcpyAtoA_Basic: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyHtoA_Basic:
+      tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
@@ -5633,6 +5974,7 @@ unit:
       tags: [multigpu]
     Unit_hipHostRegister_DirectReferenceFromKernel: *level_2
     Unit_hipHostRegister_DirectReferenceMultGpu:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5729,6 +6071,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5741,6 +6084,7 @@ unit:
     Unit_hipMallocManaged_MultiChunkSingleDevice: *level_2
       tags: [memory][alloc]
     Unit_hipMallocManaged_MultiChunkMultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5764,9 +6108,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_DeviceContextChange:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5851,12 +6197,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][memset][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemset3DAsync_RegressInLoop:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5875,12 +6223,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_AccessMultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6102,12 +6452,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipPointerGetAttributes_TinyClusterAlloc:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6121,6 +6473,7 @@ unit:
     Unit_hipPointerGetAttributes_Negative: *level_2
       tags: [memory][query]
     Unit_hipPointerGetAttributes_GpuIter:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6153,12 +6506,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_MGpuMThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6178,6 +6533,7 @@ unit:
     Unit_hipMallocManaged_TwoKrnlsComnHmmMem: *level_2
       tags: [memory][alloc]
     Unit_hipMemVmm_Basic:
+      tags: [vmm]
       tags: Unit_hipMemVmm_Basic
       <<: *level_2
       # SWDEV-396616 hipMemMap returns invalid error
@@ -6233,6 +6589,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6252,12 +6609,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemPrefetchAsync_v2_Device_Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6273,6 +6632,7 @@ unit:
     Unit_hipMemPrefetchAsync_v2_Negative: *level_2
       tags: [memory][query]
     Unit_hipMemAdvise_v2_Device_Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6301,6 +6661,7 @@ unit:
     Unit_hipMemcpyToFromSymbol_Capture: *level_2
       tags: [memory][transfer]
     Unit_hipPtrGetAttribute_Simple:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6342,6 +6703,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6352,6 +6714,7 @@ unit:
     Unit_hipDeviceSetMemPool_Basic: *level_2
       tags: [memory][alloc]
     Unit_hipDeviceSetMemPool_DestroyCurrentMempool:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6374,6 +6737,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6381,6 +6745,7 @@ unit:
       tags: [multigpu]
       disabled: [amd_windows]
     Unit_hipMemPoolSetGetAccess_Positive_P2P:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6397,6 +6762,7 @@ unit:
       # SWDEV-435667: Below tests failing randomly in stress test on 08/12/23
       disabled: [amd_windows]
     Unit_hipMemPoolSetAccess_SetAccess:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6465,6 +6831,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6506,6 +6873,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6517,12 +6885,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocFromPoolAsync_Multidevice_MultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6563,6 +6933,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6573,6 +6944,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeer_Positive_ZeroSize:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6591,12 +6963,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeer_Negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6613,12 +6987,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeerAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6639,6 +7015,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6647,6 +7024,7 @@ unit:
       # Disabling test tracked SWDEV-391555
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemcpyPeerAsync_Negative_Parameters:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6665,6 +7043,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6676,12 +7055,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeerAsync_StreamOnDiffDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6706,6 +7087,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6718,6 +7100,7 @@ unit:
     Unit_hipMemcpyWithStream_TestkindDefault: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyWithStream_TestkindDefaultForDtoD:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6747,6 +7130,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6770,6 +7154,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6784,9 +7169,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyDtoDAsync_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6830,6 +7217,7 @@ unit:
     Unit_hipMemcpy_MultiThreadWithSerialization: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy_PinnedRegMemWithKernelLaunch:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6987,9 +7375,11 @@ unit:
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
+      tags: [hipMallocPitch]
       <<: *level_2
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_SmallandBigChunks:
+      tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
@@ -7002,6 +7392,7 @@ unit:
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_Memcpy2D: *level_2
     Unit_hipMallocPitch_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7023,6 +7414,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7031,6 +7423,7 @@ unit:
     Unit_hipMalloc3DArray_DiffSizes: *level_2
       tags: [memory][alloc]
     Unit_hipMalloc3DArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7131,6 +7524,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7142,12 +7536,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipDrvMemcpy3D_multiDevice_Basic_Size_Test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7186,6 +7582,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7204,6 +7601,7 @@ unit:
     Unit_hipPointerGetAttribute_KernelUpdation: *level_2
       tags: [memory][query]
     Unit_hipPointerGetAttribute_PeerGPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7329,6 +7727,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7347,6 +7746,7 @@ unit:
       # Note: Windows disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAdvise_TstAccessedByPeer:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7389,6 +7789,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7400,6 +7801,7 @@ unit:
       # Note: Windows disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAdvise_ReadMosltyMgpuTst:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7431,6 +7833,7 @@ unit:
     Unit_hipMemAdvise_Flags_Do_Not_Cause_Prefetch: *level_2
       tags: [memory][query]
     Unit_hipMemAdvise_Read_Write_After_Advise:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7492,6 +7895,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7503,12 +7907,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocAsync_Multidevice_MultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7534,6 +7940,7 @@ unit:
     Unit_hipStreamAttachMemAsync_Positive_Pageable: *level_2
       tags: [memory][query]
     Unit_hipStreamAttachMemAsync_Positive_AttachGlobal:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7573,6 +7980,7 @@ unit:
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipMallocMipmappedArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7644,6 +8052,7 @@ unit:
     Unit_hipMallocArray_DiffSizes: *level_2
       tags: [memory][alloc]
     Unit_hipMallocArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7742,6 +8151,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7761,6 +8171,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7771,6 +8182,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipArrayGetDescriptor_Host2Array_Array2Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7834,6 +8246,7 @@ unit:
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchKernel_Negative_Parameters:
+      tags: [multigpu]
       tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
@@ -7875,6 +8288,7 @@ unit:
     Unit_hipGetFuncBySymbol_InChildProcess: *level_2
       tags: [module][function]
     Unit_hipGetFuncBySymbol_MultiDev: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
@@ -7884,6 +8298,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipGetFuncBySymbol_MultiDevMultiThread: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
@@ -7897,6 +8312,7 @@ unit:
     Unit_hipModuleGetFunction_Negative_Parameters: *level_2
       tags: [module][function]
     Unit_hipModuleGetFunction_DiffDevice: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
@@ -7912,6 +8328,7 @@ unit:
     Unit_hipGetProcAddress_ModuleApisLoadData: *level_2
       tags: [module][resource]
     Unit_hipGetProcAddress_ModuleApisCooperativeKernels: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][resource]
       tags: [multigpu]
       tags: [multigpu]
@@ -7948,6 +8365,7 @@ unit:
     Unit_hipDrvLaunchKernelEx_With_MaxBlockDims: *level_2
       tags: [module][launch]
     Unit_hipExtLaunchMultiKernelMultiDevice_Functional: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
@@ -8008,6 +8426,7 @@ unit:
     Unit_hipModuleGetFunctionCount_NegativeTsts: *level_2
       tags: [module][function]
     Unit_hipModuleGetGlobal_Functional: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
@@ -8017,6 +8436,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipModuleLoad_MultProcess_MultGPU: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][load]
       tags: [multigpu]
       tags: [multigpu]
@@ -8072,6 +8492,7 @@ unit:
       # Note: Test disabled due to defect - EXSWHTEC-165
       disabled: [amd_windows]
     Unit_hipModuleGetGlobal_DiffDevice: *level_2
+      tags: [multigpu]
       tags: [multigpu][module][resource]
       tags: [multigpu]
       tags: [multigpu]
@@ -8120,6 +8541,7 @@ unit:
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipExtModuleLaunchKernel_Negative_Parameters:
+      tags: [multigpu]
       tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
@@ -8140,68 +8562,97 @@ unit:
       tags: [module][function]
   multiThread:
     Unit_hipMemsetAsync_QueueJobsMultithreaded: *level_2
+      tags: [memory][multithread]
     Unit_hipMultiThreadDevice_Streams: *level_2
+      tags: [device_mgmt][multithread]
     Unit_hipMultiThreadDevice_SerialPyramid:
+      tags: [device_mgmt][multithread]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_hipMultiThreadDevice_ParallelPyramid: *level_2
+      tags: [device_mgmt][multithread]
     Unit_hipMultiThreadDevice_NearZero:
+      tags: [device_mgmt][multithread]
       <<: *level_2
       # Note: Windows disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipMultiThreadStreams1_AsyncSync: *level_2
+      tags: [stream][multithread]
     Unit_hipMultiThreadStreams1_AsyncAsync:
+      tags: [stream][multithread]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipMultiThreadStreams1_AsyncSame:
+      tags: [stream][multithread]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipMultiThreadStreams2: *level_2
+      tags: [stream][multithread]
   occupancy:
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_Negative_Parameters:
+      tags: [occupancy]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_Positive_RangeValidation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_Positive_TemplateInvocation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_Negative: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_rangeValidation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessor_templateInvocation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_Negative_Parameters: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_Positive_RangeValidation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_Positive_TemplateInvocation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_Negative: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_rangeValidation: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotentialBlockSize_templateInvocation: *level_2
+      tags: [occupancy]
     Unit_hipModuleOccupancyMaxPotentialBlockSize_Negative_Parameters:
+      tags: [occupancy]
       <<: *level_2
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipModuleOccupancyMaxPotentialBlockSize_Positive_RangeValidation:
+      tags: [occupancy]
       <<: *level_2
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipModuleOccupancyMaxPotentialBlockSizeWithFlags_Negative_Parameters:
+      tags: [occupancy]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipModuleOccupancyMaxPotentialBlockSizeWithFlags_Positive_RangeValidation:
+      tags: [occupancy]
       <<: *level_2
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipModuleOccupancyMaxActiveBlocksPerMultiprocessor_Negative_Parameters:
+      tags: [occupancy]
       <<: *level_2
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipModuleOccupancyMaxActiveBlocksPerMultiprocessor_Positive_RangeValidation:
+      tags: [occupancy]
       <<: *level_2
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_OccupancyAPIs_StreamCapture: *level_2
+      tags: [occupancy]
     Unit_hipModuleOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_Negative_Parameters:
+      tags: [occupancy]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
@@ -8210,43 +8661,68 @@ unit:
       # SWDEV-434878: Below tests failed in stress test on 24/11/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_chkRange: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_mgpu:
+      tags: [multigpu][occupancy]
       <<: *level_2
       tags: [multigpu]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_Functor: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_Lambda: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_NegTst: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxPotBlkSizeVariableSMemWithFlags_Functional:
+      tags: [occupancy]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_ValidArgs: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyMaxActiveBlocksPerMultiprocessorWithFlags_InvalidArgs: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyAvailableDynamicSMemPerBlock_Negative: *level_2
+      tags: [occupancy]
     Unit_hipOccupancyAvailableDynamicSMemPerBlock_Positive: *level_2
+      tags: [occupancy]
   p2p:
     Unit_hipDeviceGetP2PAttribute_Basic: *level_2
+      tags: [peer]
     Unit_hipDeviceGetP2PAttribute_Negative: *level_2
+      tags: [peer]
     Unit_hipP2pLinkTypeAndHopFunc: *level_2
+      tags: [peer]
   printf:
     Unit_Printf_flags_Sanity_Positive:
+      tags: [printf]
       <<: *level_2
       # Below test fails in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/274
       disabled: [amd_windows]
     Unit_Printf_length_Sanity_Positive:
+      tags: [printf]
       <<: *level_2
       # Below test fails in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/274
       disabled: [amd_windows]
     Unit_Printf_specifier_Sanity_Positive: *level_2
+      tags: [printf]
     Unit_Printf_Negative_Parameters_RTC: *level_2
+      tags: [printf]
     Unit_Buffered_Printf_Flags: *level_2
+      tags: [printf]
     Unit_Buffered_Printf_Specifier: *level_2
+      tags: [printf]
     Unit_Host_Printf: *level_2
+      tags: [printf]
     Unit_NonHost_Printf_basic: *level_2
+      tags: [printf]
     Unit_NonHost_Printf_loop: *level_2
+      tags: [printf]
     Unit_NonHost_Printf_multiple_Threads: *level_2
+      tags: [printf]
     Unit_NonHost_Printf_BufferAvailability: *level_2
+      tags: [printf]
     Unit_Printf_ManyDevicesTest:
+      tags: [multigpu][printf]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8258,10 +8734,15 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_Printf_PrintfStar: *level_2
+      tags: [printf]
     Unit_Printf_PrintfManyWaves: *level_2
+      tags: [printf]
     Unit_Printf_PrintfWidthPrecision: *level_2
+      tags: [printf]
     Unit_Printf_PrintfBasicTsts: *level_2
+      tags: [printf]
     Unit_Printf_PrintfAltFormsTsts: *level_2
+      tags: [printf]
   rtc:
     Unit_hiprtc_saxpy: *level_2
       tags: [rtc][compile]
@@ -8477,6 +8958,7 @@ unit:
       tags: Unit_hipMemPrefetchAsync_Basic
       tags: Unit_hipMemPrefetchAsync_Basic
       tags: Unit_hipMemPrefetchAsync_Basic
+      tags: Unit_hipMemPrefetchAsync_Basic
       tags: [stream]
     Unit_hipMemPoolApi_hipStreamLegacy_Basic: *level_2
     Unit_hipStreamValue_Write:
@@ -8651,6 +9133,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][callback][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8672,6 +9155,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8685,10 +9169,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipStreamGetDevice_NullStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8717,6 +9203,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8730,12 +9217,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipStreamLegacy_TwoThreadsEachOneDiffOperation: *level_2
       tags: [stream]
     Unit_hipStreamLegacy_TwoDevicesEachOneDiffOperation:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8769,6 +9258,7 @@ unit:
     Unit_hipStreamGetId_MultipleThreads: *level_2
       tags: [stream]
     Unit_hipStreamGetId_MultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8979,6 +9469,7 @@ unit:
       tags: [sync][coherency]
       tags: [sync]
     Unit_cache_coherency_gpu_gpu:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu][sync][coherency]
       tags: [multigpu]
@@ -9472,6 +9963,7 @@ unit:
       tags: [sync]
     Unit___threadfence_block_Positive_Basic_Peer:
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
       tags: [multigpu]
@@ -9495,6 +9987,7 @@ unit:
       tags: [sync]
     Unit___threadfence_Positive_Basic_Peer:
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
       tags: [multigpu]
@@ -9505,6 +9998,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit___threadfence_system_Positive_Basic_Peer:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
@@ -9527,16 +10021,27 @@ unit:
     Unit_VectorAndValueTypeOperations_SanityCheck_Basic_Device: *level_2
     Unit_VectorStructuredBindings_SanityCheck_Basic_host: *level_2
     Unit_VectorConstexpr_SanityCheck_Basic_host_device: *level_2
+      tags: [vector_types]
     Unit_Vector_alignment_check: *level_2
+      tags: [vector_types]
     Unit_Vector_size_check: *level_2
+      tags: [vector_types]
     Unit_dim3_Empty_Positive_Device: *level_2
+      tags: [vector_types]
     Unit_dim3_X_Positive_Device: *level_2
+      tags: [vector_types]
     Unit_dim3_XY_Positive_Device: *level_2
+      tags: [vector_types]
     Unit_dim3_XYZ_Positive_Device: *level_2
+      tags: [vector_types]
     Unit_dim3_Empty_Positive_Host: *level_2
+      tags: [vector_types]
     Unit_dim3_X_Positive_Host: *level_2
+      tags: [vector_types]
     Unit_dim3_XY_Positive_Host: *level_2
+      tags: [vector_types]
     Unit_dim3_XYZ_Positive_Host: *level_2
+      tags: [vector_types]
   virtualMemoryManagement:
     Unit_hipMemGetAllocationGranularity_MinGranularity:
       <<: *level_2
@@ -9547,107 +10052,150 @@ unit:
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemGetAllocationGranularity_AllGPUs:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemGetAllocationGranularity_NegativeTests:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemGetAllocationGranularity_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemRetainAllocationHandle_SetGet:
+      tags: [vmm]
       <<: *level_2
       disabled: [amd_wsl]
     Unit_hipMemRetainAllocationHandle_NegTst:
+      tags: [vmm]
       <<: *level_2
       disabled: [amd_wsl]
     Unit_hipMemRetainAllocationHandle_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_Positive_Basic: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_Negative_Parameters: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_MulProc_ChldUseHdl: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_MulProc_ParntChldUseHdl: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_MulProc_GrndChldUseHdl: *level_2
+      tags: [vmm]
     Unit_hipMemImportFromShareableHandle_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_Negative: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_DeviceMemory: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_VM: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_DeviceMemory_InAnotherDevice:
+      tags: [multigpu][vmm]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemGetHandleForAddressRange_VM_InAnotherDevice:
+      tags: [multigpu][vmm]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemGetHandleForAddressRange_MulProc_Socket_DeviceMem: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_MulProc_Socket_VM: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_MultipleThreads: *level_2
+      tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_DifferentOffsets: *level_2
+      tags: [vmm]
     Unit_hipMemExportToShareableHandle_Positive_Basic: *level_2
+      tags: [vmm]
     Unit_hipMemExportToShareableHandle_Negative_Parameters: *level_2
+      tags: [vmm]
     Unit_hipMemExportToShareableHandle_Capture: *level_2
+      tags: [vmm]
     Unit_hipGetProcAddress_VMM: *level_2
+      tags: [vmm]
     Unit_hipMemAddressFree_negative:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) NOTE: The following test is disabled due to defect - EXSWHTEC-244
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAddressFree_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemAddressReserve_AlignmentTest:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) NOTE: The following test is disabled due to defect - EXSWHTEC-245
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAddressReserve_Negative: *level_2
+      tags: [vmm]
     Unit_hipMemAddressReserve_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemCreate_BasicAllocateDeAlloc_MultGranularity:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemCreate_ChkDev2HstMemcpy_ReleaseHdlPostUnmap:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemCreate_ChkDev2HstMemcpy_ReleaseHdlPreUse:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemCreate_ChkWithKerLaunch:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemCreate_MapNonContiguousChunks:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemCreate_ChkWithMemset:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemCreate_Negative:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemCreate_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemSetAccess_SetGet:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_MultDevSetGet:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_EntireVMMRangeSetGet:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemGetAccess_NegTst:
+      tags: [vmm]
       <<: *level_2
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_FuncTstOnMultDev:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9662,21 +10210,25 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_ChangeAccessProp:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-413997: VMM test still failing in windows
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2UnifiedMemCpy:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2DevMemCpy:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail randomly in gfx1030 MGU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2PeerDevMemCpy:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9691,6 +10243,7 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2PeerPeerMemCpy:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9704,11 +10257,13 @@ unit:
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemSetAccess_Vmm2VMMMemCpy:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail in gfx1100 MGPU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2VMMInterDevMemCpy:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9723,51 +10278,64 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_GrowVMM:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Multithreaded:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444031: This test fails in gfx1101 MGPU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_negative:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetGetAccess_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemSetAccessHostDevice_hostalloc:
+      tags: [vmm]
       <<: *level_2
       # SWDEV-555665
       disabled: [amd_windows]
     Unit_hipMemSetAccessHost_devicealloc: *level_2
+      tags: [vmm]
     Unit_hipMemGetAllocationPropertiesFromHandle_functional:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemGetAllocationPropertiesFromHandle_Negative:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemGetAllocationPropertiesFromHandle_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemMap_SameMemoryReuse:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail randomly in gfx1030 MGU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_PhysicalMemoryReuse_SingleGPU:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail in gfx1100 MGPU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_PhysicalMemory_Map2MultVMMs:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail in gfx1100 MGPU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_PhysicalMemoryReuse_MultiDev:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9782,10 +10350,12 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_VMMMemoryReuse_SingleGPU:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemMap_VMMMemoryReuse_MultiGPU:
+      tags: [multigpu][vmm]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9800,83 +10370,139 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_MapPartialVMMMem:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemMap_negative:
+      tags: [vmm]
       <<: *level_2
       # (amd_windows) SWDEV-444041: These tests fail randomly in gfx1030 MGU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemMap_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemRelease_negative:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemRelease_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemUnmap_negative:
+      tags: [vmm]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemUnmap_Capture: *level_2
+      tags: [vmm]
     Unit_hipMemMapArrayAsync_Positive_Basic:
+      tags: [vmm]
       <<: *level_2
       # Below tests are failing PSDB
       <<: *disabled_nvidia
   vulkan_interop:
     Unit_hipDestroyExternalMemory_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipDestroyExternalMemory_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipDestroyExternalSemaphore_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipDestroyExternalSemaphore_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Positive_Read_Write: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Positive_Read_Write_With_Offset: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Positive_Read_Write_Device_Memory: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedBuffer_Vulkan_Positive_Read_Write_With_Offset_Device_Memory: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedMipmappedArray_Vulkan_Positive_Read_Write: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedMipmappedArray_Vulkan_Array_Layered: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedMipmappedArray_Vulkan_Array_Cubemap: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedMipmappedArray_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipExternalMemoryGetMappedMipmappedArray_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresSignalNode_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresSignalNode_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresSignalNode_Vulkan_Positive_Multiple_Semaphores: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresSignalNode_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresWaitNode_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresWaitNode_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresWaitNode_Vulkan_Positive_Multiple_Semaphores: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphAddExternalSemaphoresWaitNode_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExecExternalSemaphoresSignalNodeSetParams_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExecExternalSemaphoresSignalNodeSetParams_Vulkan_Positive_Timeline_Semaphore: *level_2
     Unit_hipGraphExecExternalSemaphoresSignalNodeSetParams_Vulkan_Positive_Multiple_Semaphores: *level_2
     Unit_hipGraphExecExternalSemaphoresSignalNodeSetParams_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExecExternalSemaphoresWaitNodeSetParams_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExecExternalSemaphoresWaitNodeSetParams_Vulkan_Positive_Timeline_Semaphore: *level_2
     Unit_hipGraphExecExternalSemaphoresWaitNodeSetParams_Vulkan_Positive_Multiple_Semaphores: *level_2
     Unit_hipGraphExecExternalSemaphoresWaitNodeSetParams_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresSignalNodeGetParams_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresSignalNodeSetParams_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresSignalNodeSetParams_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresSignalNodeSetParams_Vulkan_Positive_Multiple_Semaphores: *level_2
     Unit_hipGraphExternalSemaphoresSignalNodeSetParams_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresWaitNodeGetParams_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresWaitNodeSetParams_Positive_Basic: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresWaitNodeSetParams_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresWaitNodeSetParams_Vulkan_Positive_Multiple_Semaphores: *level_2
+      tags: [interop][vulkan]
     Unit_hipGraphExternalSemaphoresWaitNodeSetParams_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipImportExternalMemory_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipImportExternalMemory_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipImportExternalSemaphore_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipImportExternalSemaphore_Vulkan_Capture: *level_2
+      tags: [interop][vulkan]
     Unit_hipSignalExternalSemaphoresAsync_Vulkan_Positive_Binary_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipSignalExternalSemaphoresAsync_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipSignalExternalSemaphoresAsync_Vulkan_Positive_Multiple_Semaphores: *level_2
+      tags: [interop][vulkan]
     Unit_hipSignalExternalSemaphoresAsync_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
     Unit_hipWaitExternalSemaphoresAsync_Vulkan_Positive_Binary_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipWaitExternalSemaphoresAsync_Vulkan_Positive_Timeline_Semaphore: *level_2
+      tags: [interop][vulkan]
     Unit_hipWaitExternalSemaphoresAsync_Vulkan_Positive_Multiple_Semaphores: *level_2
+      tags: [interop][vulkan]
     Unit_hipWaitExternalSemaphoresAsync_Vulkan_Negative_Parameters: *level_2
+      tags: [interop][vulkan]
   warp:
     Unit_Warp_Ballot_Positive_Basic: *level_2
       tags: [device_lib][warp][vote]
