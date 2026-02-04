@@ -2281,7 +2281,6 @@ unit:
     Unit_hipGraph_BasicCyclic4: *level_2
     Unit_hipGraph_BasicCyclic5: *level_2
     Unit_hipGraph_PerfCheck_MemcpyKernelMixCall: *level_2
-      tags: DEBUG_CLR_GRAPH_PACKET_CAPTURE
     Unit_hipGraph_PerfCheck_hipGraphExecKernelNodeSetParams:
       <<: *level_2
       tags: [multigpu]
@@ -2289,7 +2288,6 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipGraph_PerfCheck_hipGraphExecMemcpyNodeSetParams: *level_2
-      tags: DEBUG_CLR_GRAPH_PACKET_CAPTURE
     Unit_hipGraph_PerfCheck_hipGraphExecMemcpyNodeSetParams_inLoop:
       <<: *level_2
       tags: [multigpu]
@@ -4947,7 +4945,6 @@ unit:
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAdvise_TstAlignedAllocMem: *level_2
     Unit_hipMemAdvise_TstAlignedAllocMem_XNACK:
-      tags: HSA_XNACK
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
@@ -6829,24 +6826,16 @@ multiproc:
   Unit_mmap_CoherentTst: *level_2
   Unit_mmap_CoherentTstWthAdvise: *level_2
   Unit_hipHostMalloc_WthEnv0Flg1: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv0Flg2: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv0Flg3:
-      tags: HIP_HOST_COHERENT
     <<: *level_2
     # Note: CONFIG_NUMA disabled
     disabled: [amd_wsl]
   Unit_hipHostMalloc_WthEnv0Flg4: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv1: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv1Flg1: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv1Flg2: *level_2
-      tags: HIP_HOST_COHERENT
   Unit_hipHostMalloc_WthEnv1Flg3:
-      tags: HIP_HOST_COHERENT
     <<: *level_2
     # Note: CONFIG_NUMA disabled
     disabled: [amd_wsl]
