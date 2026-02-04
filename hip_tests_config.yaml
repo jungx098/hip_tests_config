@@ -117,6 +117,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicAnd_system_Positive_Peer_GPUs_Scattered_Addresses:
@@ -145,6 +146,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicXor_Positive_SameAddress: *level_2
@@ -160,6 +162,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_atomicXor_system_Positive_Peer_GPUs_Adjacent_Addresses:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -192,6 +195,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicMin_system_Positive_Peer_GPUs_Scattered_Addresses:
@@ -210,6 +214,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_atomicMax_system_Positive_Peer_GPUs_Adjacent_Addresses:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -334,11 +339,13 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_atomicAdd_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -370,9 +377,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicSub_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -398,9 +407,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_atomicCAS_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -437,11 +448,13 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # SWDEV-435667: Below tests failing randomly in stress test on 01/12/23
       disabled: [amd_wsl]
     Unit_atomicExch_system_Positive_Host_And_GPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -493,6 +506,7 @@ unit:
       tags: [atomic]
   c_compilation:
     Unit_hipGetDeviceProp_ctest: *level_2
+      tags: [rtc][integration]
   callback:
     Unit_hipApiName_Positive_Basic: *level_2
     Unit_hipApiName_Negative_ReservedIds: *level_2
@@ -550,17 +564,29 @@ unit:
     Unit_hipWallClock64_Positive_Basic: *level_2
   compiler:
     Unit_hipClassKernel_Overload_Override: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_Friend: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_Empty: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_BSize: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_Size: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_Virtual: *level_2
+      tags: [rtc][integration]
     Unit_hipClassKernel_Value: *level_2
+      tags: [rtc][integration]
     Unit_test_spirv_mode: *level_2
+      tags: [rtc][integration]
     Unit_test_compressed_codeobject: *level_2
+      tags: [rtc][integration]
     Unit_test_generic_target_in_compressed_fatbin: *level_2
+      tags: [rtc][integration]
     Unit_test_generic_target_in_regular_fatbin: *level_2
+      tags: [rtc][integration]
     Unit_test_generic_target_only_in_compressed_fatbin:
+      tags: [rtc][integration]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
@@ -667,6 +693,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][groups]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -674,6 +701,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipCGMultiGridGroupType_Barrier:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -711,6 +739,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][launch]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -721,6 +750,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][cooperative][groups]
       tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
@@ -728,6 +758,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Getters_Positive_Base_Type:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -743,6 +774,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Positive_Sync:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -894,6 +926,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -910,6 +943,7 @@ unit:
       tags: [device_mgmt][query]
     Print_Out_Device_Count: *level_2
     Unit_hipGetDeviceProperties_ArchPropertiesTst:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -950,6 +984,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -960,10 +995,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][query][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipSetGetDevice_Positive_Threaded_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -986,6 +1023,7 @@ unit:
     Unit_hipDeviceGetUuid_Negative: *level_2
       tags: [device_mgmt][query]
     Unit_hipDeviceGetUuid_From_RocmInfo:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1026,10 +1064,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipDeviceEnablePeerAccess_negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1046,6 +1086,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1054,6 +1095,7 @@ unit:
     Unit_hipExtGetLinkTypeAndHopCount_Negative_Parameters: *level_2
       tags: [device_mgmt][query]
     Unit_hipDeviceSetLimit_SetGet:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1092,6 +1134,7 @@ unit:
     Unit_hipDeviceGetSetLimit_Scratch_SetBeforeKernelLaunch: *level_2
       tags: [device_mgmt][config]
     Unit_hipDeviceGetSetLimit_Scratch_MultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1174,6 +1217,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][config][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1196,10 +1240,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [device_mgmt][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipGetProcAddress_SetGetMemPoolAPIs:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1268,15 +1314,25 @@ unit:
       tags: [device_lang]
   deviceLib:
     Unit_deviceFunctions_CompileTest: *level_2
+      tags: [device_lib][math]
     Unit_AnyAll_CompileTest: *level_2
+      tags: [device_lib][warp]
     Unit_ballot: *level_2
+      tags: [device_lib][warp]
     Unit_clz: *level_2
+      tags: [device_lib][bitops]
     Unit_ffs: *level_2
+      tags: [device_lib][bitops]
     Unit_funnelshift: *level_2
+      tags: [device_lib][math]
     Unit_brev: *level_2
+      tags: [device_lib][bitops]
     Unit_popc: *level_2
+      tags: [device_lib][bitops]
     Unit_ldg: *level_2
+      tags: [device_lib][bitops]
     Unit_threadfence_system:
+      tags: [multigpu][device_lib]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1287,213 +1343,326 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_syncthreads_and: *level_2
+      tags: [device_lib][sync]
     Unit_syncthreads_count: *level_2
+      tags: [device_lib][sync]
     Unit_syncthreads_or: *level_2
+      tags: [device_lib][sync]
     Unit_deviceAllocation_Malloc_PerThread_PrimitiveDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_PerThread_PrimitiveDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_PerThread_StructDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_PerThread_StructDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_InOneThread_AccessInAllThreads:
+      tags: [device_lib][memory]
       <<: *level_2
       # (amd_windows) Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # (amd_windows) all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       # (amd_wsl) SWDEV-427101:Below test fails randomly in PSDB
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_AcrossKernels:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_AcrossKernels:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_ComplexDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows]
     Unit_deviceAllocation_New_ComplexDataType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_UnionType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_UnionType:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_SingleCodeObj:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_SingleCodeObj:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_PerThread_MultKerMultStrm: *level_2
+      tags: [device_lib][memory]
     Unit_deviceAllocation_New_PerThread_MultKerMultStrm: *level_2
+      tags: [device_lib][memory]
     Unit_deviceAllocation_Malloc_PerThread_Graph:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_PerThread_Graph:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: this tests were disabled because some seemed to hang the machine on Windows with Navi32;
       # all the ones calling TestMemoryAcrossMulKernels()/TestMemoryAcrossMulKernelsUsingGraph() were disabled
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_DeviceFunc:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_DeviceFunc:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_VirtualFunction:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_MulKernels_MulThreads:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_MulKernels_MulThreads:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_Malloc_SingKernels_MulThreads: *level_2
+      tags: [device_lib][memory]
     Unit_deviceAllocation_New_SingKernels_MulThreads: *level_2
+      tags: [device_lib][memory]
     Unit_deviceAllocation_Malloc_MulCodeObj:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_deviceAllocation_New_MulCodeObj:
+      tags: [device_lib][memory]
       <<: *level_2
       # Note: devicelib hangs and failures
       disabled: [amd_windows, amd_wsl]
     Unit_AtomicFunctions_Inc: *level_2
+      tags: [device_lib][atomic]
     Unit_AtomicFunctions_Dec: *level_2
+      tags: [device_lib][atomic]
     Unit_DoublePrecisionIntrinsics: *level_2
+      tags: [device_lib][math]
     Unit_DoublePrecisionMathDevice: *level_2
+      tags: [device_lib][math]
     Unit_DoublePrecisionMathHost: *level_2
+      tags: [device_lib][math]
     Unit_FloatMathPrecise: *level_2
+      tags: [device_lib][math]
     Unit_IntegerIntrinsics: *level_2
+      tags: [device_lib][math]
     Unit_SinglePrecisionIntrinsics: *level_2
+      tags: [device_lib][math]
     Unit_SinglePrecisionMathDevice: *level_2
+      tags: [device_lib][math]
     Unit_SinglePrecisionMathHost: *level_2
+      tags: [device_lib][math]
     Unit_SimpleAtomicsTest: *level_2
+      tags: [device_lib][atomic]
     Unit_hipTestAtomicAdd: *level_2
+      tags: [device_lib][atomic]
     Unit_StdComplex: *level_2
+      tags: [device_lib][types]
     Unit_hipTestClock: *level_2
+      tags: [device_lib][misc]
     Unit_kernel_trigger: *level_2
+      tags: [device_lib][math]
     Unit_ToAndFroMemCpyToDevice: *level_2
+      tags: [device_lib][memory]
     Unit_TestIncludeMathPreciseFloat: *level_2
+      tags: [device_lib][math]
     Unit_hipTestDotFunctions: *level_2
+      tags: [device_lib][math]
     Unit_hipMemcpyToSymbolAsync_ToNFrom: *level_2
+      tags: [device_lib][misc]
     Unit_hipGetSymbolAddressAndSize_Validation: *level_2
+      tags: [device_lib][misc]
     Unit_hipGetSymbolAddress_Negative: *level_2
+      tags: [device_lib][misc]
     Unit_hipGetSymbolSize_Negative: *level_2
+      tags: [device_lib][misc]
     Unit_hipTest_DeviceNewOperator: *level_2
+      tags: [device_lib][misc]
     Unit_hipThreadFence: *level_2
+      tags: [device_lib][sync]
     Unit_hipDeviceTrigFunc_Float: *level_2
+      tags: [device_lib][misc]
     Unit_hipTestDeviceLimit_Basic: *level_2
+      tags: [device_lib][misc]
     Unit_hipTrigDeviceFunc_Double: *level_2
+      tags: [device_lib][misc]
     Unit_TestDevice_DoublePrecisionMathFunc: *level_2
+      tags: [device_lib][misc]
     Unit_hadd_int_varaint: *level_2
+      tags: [device_lib][math]
     Unit_rhadd_int_varaint: *level_2
+      tags: [device_lib][math]
     Unit_uhadd_int_varaint: *level_2
+      tags: [device_lib][math]
     Unit_urhadd_int_varaint: *level_2
+      tags: [device_lib][math]
     Unit_unsafeAtomicAdd: *level_2
+      tags: [device_lib][atomic]
     Unit_mbcnt: *level_2
+      tags: [device_lib][bitops]
     Unit_bitExtract: *level_2
+      tags: [device_lib][bitops]
     Unit_bitInsert: *level_2
+      tags: [device_lib][bitops]
     Unit_floatTM: *level_2
+      tags: [device_lib][math]
     Unit_abs_int64_Verification: *level_2
+      tags: [device_lib][math]
     Unit_pown_Verification: *level_2
+      tags: [device_lib][math]
     Unit_hmax_hmin_Tsts: *level_2
+      tags: [device_lib][types]
     Unit_hmax_hmin_Tsts_Negative: *level_2
+      tags: [device_lib][types]
     Unit_hmax_hmin_Tsts_With_Array: *level_2
+      tags: [device_lib][types]
     Unit_hipBfloat16: *level_2
+      tags: [device_lib][types]
     Unit_hipVectorTypes_test_on_host: *level_2
+      tags: [device_lib][types]
     Unit_hipVectorTypes_test_on_device:
+      tags: [device_lib][types]
       <<: *level_2
       # SWDEV-444987 - Below tests fail in stress testing on 25/01/2023
       disabled: [amd_windows, amd_wsl]
     Unit_hipTestHalf: *level_2
+      tags: [device_lib][types]
     Unit_TestMathFuncComplex: *level_2
+      tags: [device_lib][types]
     Unit_hipTestFMA: *level_2
+      tags: [device_lib][math]
     Unit_hipTestNativeHalf: *level_2
+      tags: [device_lib][types]
     Unit_Test_makechar_functionality:
+      tags: [device_lib][types]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_bf16_basic: *level_2
+      tags: [device_lib][types]
     Unit_bf16_conversion_to_integral_type: *level_2
     Unit_bf162_basic: *level_2
+      tags: [device_lib][types]
     Unit_bf16_operators_host: *level_2
+      tags: [device_lib][types]
     Unit_bf162_operators_host: *level_2
+      tags: [device_lib][types]
     Unit_bf16_bf162_convert_tests: *level_2
+      tags: [device_lib][types]
     Unit_bf16_shfl: *level_2
+      tags: [device_lib][types]
     Unit_bf162_shfl: *level_2
+      tags: [device_lib][types]
     Unit_bf16_value_ops: *level_2
+      tags: [device_lib][types]
     Unit_bf16_floor_ceil: *level_2
+      tags: [device_lib][types]
     Unit_bf162_floor_ceil: *level_2
+      tags: [device_lib][types]
     Unit_AtomicsWithRandomActiveLanesInWavefront_UniformInteger: *level_2
+      tags: [device_lib][atomic]
     Unit_AtomicsWithRandomActiveLanesInWavefront_UniformFloat: *level_2
+      tags: [device_lib][atomic]
     Unit_AtomicsWithRandomActiveLanesInWavefront_DivergentInteger: *level_2
+      tags: [device_lib][atomic]
     Unit_AtomicsWithRandomActiveLanesInWavefront_DivergentFloat: *level_2
+      tags: [device_lib][atomic]
     Unit_fp16_arith: *level_2
+      tags: [device_lib][types]
     Unit_fp162_arith: *level_2
+      tags: [device_lib][types]
     Unit_fp16_host_operations: *level_2
+      tags: [device_lib][types]
     Unit_half_isnan_host: *level_2
+      tags: [device_lib][types]
     Unit_half_abs_host: *level_2
+      tags: [device_lib][types]
     Unit_half_min_max_host: *level_2
+      tags: [device_lib][types]
     Unit_fp8_ocp_bool_host: *level_2
+      tags: [device_lib][types]
     Unit_all_fp8_ocp_vector_cvt: *level_2
+      tags: [device_lib][types]
     Unit_fp8_ocp_correctness: *level_2
     Unit_fp8_ocp_vector_basic_conversions: *level_2
+      tags: [device_lib][types]
     Unit_fp8_fnuz_bool_host: *level_2
+      tags: [device_lib][types]
     Unit_all_fp8_fnuz_vector_cvt: *level_2
+      tags: [device_lib][types]
     Unit_fp8_fnuz_correctness: *level_2
     Unit_fp8_fnuz_vector_basic_conversions: *level_2
+      tags: [device_lib][types]
     Unit__hip_cvt_bfloat16raw_to_e8m0: *level_2
+      tags: [device_lib][types]
     Unit__hip_cvt_float_to_e8m0: *level_2
+      tags: [device_lib][types]
     Unit__hip_cvt_double_to_e8m0: *level_2
+      tags: [device_lib][types]
     Unit__hip_cvt_e8m0_to_bf16raw: *level_2
+      tags: [device_lib][types]
     Unit_all_fp6_ocp_vector_cvt_interger_data: *level_2
     Unit_all_fp6_ocp_vector_cvt_unsigned_interger_data: *level_2
     Unit_all_fp6_ocp_vector_cvt_unsigned_integer_device: *level_2
     Unit_all_fp6_ocp_vector_cvt_interger_data_device: *level_2
     Unit_all_fp4_from_double: *level_2
+      tags: [device_lib][types]
     Unit_all_fp4_from_double_device: *level_2
+      tags: [device_lib][types]
     Unit_all_fp4_from_interger_data: *level_2
     Unit_all_fp4_from__unsigned_integer_data: *level_2
     Unit_all_fp4_from_integer_data_device: *level_2
     Unit_all_fp4_from__unsigned_integer_data_device: *level_2
     Unit_ocp_fp4_from_double_full_range_host: *level_2
+      tags: [device_lib][types]
     Unit_ocp_fp4_from_double_full_range_device: *level_2
+      tags: [device_lib][types]
     Unit_AtomicAdd_CoherentwithUnsafeflag: *level_2
     Unit_AtomicAdd_Coherentwithoutflag: *level_2
     Unit_AtomicAdd_Coherentwithnounsafeflag: *level_2
@@ -1501,17 +1670,29 @@ unit:
     Unit_AtomicAdd_NonCoherentwithnounsafeflag: *level_2
     Unit_AtomicAdd_NonCoherentwithUnsafeflag: *level_2
     Unit_BuiltinAtomics_fmaxCoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomics_fmaxNonCoherentGlobalFlatMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomicsRTC_fmaxCoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomicsRTC_fmaxNonCoherentGlobalFlatMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomics_fminCoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomics_fminNonCoherentGlobalFlatMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomicsRTC__fminCoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltinAtomicsRTC_fminNonCoherentGlobalFlatMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltInAtomicAdd_CoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltInAtomicAdd_NonCoherentGlobalMem: *level_2
+      tags: [device_lib][math]
     Unit_BuiltInAtomicAdd_CoherentGlobalMemWithRtc: *level_2
+      tags: [device_lib][math]
     Unit_BuiltInAtomicAdd_NonCoherentGlobalMemWithRtc:
+      tags: [device_lib][math]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
@@ -1529,19 +1710,27 @@ unit:
     Unit_unsafeAtomicAdd_NonCoherentwithunsafeatomicsflag: *level_2
     Unit_fp8_fnuz_compare_host_device: *level_2
     Unit_fp8x2_fnuz_compare_host_device: *level_2
+      tags: [device_lib][types]
     Unit_fp8x2_fnuz_split_compare: *level_2
+      tags: [device_lib][types]
     Unit_fp8x4_fnuz_split_compare: *level_2
+      tags: [device_lib][types]
     Unit_fp8_fnuz_bool_device: *level_2
+      tags: [device_lib][types]
     Unit_all_fp8_fnuz_cvt: *level_2
+      tags: [device_lib][types]
     Unit_fp8_fnuz_correctness_device: *level_2
     Dynamic_Alloca: *level_2
   dynamicLoading:
     Unit_dynamic_loading_device_kernels_from_library:
+      tags: [module]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_hipApiDynamicLoad_hipGetProcAddress: *level_2
+      tags: [module]
     Unit_hipApiDynamicLoad: *level_2
+      tags: [module]
   errorHandling:
     Unit_hipGetErrorName_Positive_Basic: *level_2
       tags: [error_handling]
@@ -1564,6 +1753,7 @@ unit:
     Unit_hipGetLastError_Positive_Threaded: *level_2
       tags: [error_handling]
     Unit_hipGetLastError_with_hipMemcpyPeerAsync:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1652,6 +1842,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [error_handling][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1662,6 +1853,7 @@ unit:
     Unit_hipExtGetLastError_Positive_Threaded: *level_2
       tags: [error_handling]
     Unit_hipExtGetLastError_with_hipMemcpyPeerAsync:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1736,6 +1928,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][sync][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1753,6 +1946,7 @@ unit:
       <<: *level_2
       disabled: [amd_windows]
     Unit_hipEventRecord_Negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -1833,6 +2027,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -1843,10 +2038,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [event][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipEventQuery_DifferentDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2000,9 +2197,12 @@ unit:
       tags: [kernel]
   g++:
     Unit_hipMalloc_gpptest: *level_2
+      tags: [compiler]
   gcc:
     Unit_LaunchKernelgccTests: *level_2
+      tags: [compiler]
     Unit_hipMallocgccTests: *level_2
+      tags: [compiler]
   gl_interop:
     Unit_hipGLGetDevices_Positive_Basic:
       <<: *level_2
@@ -2152,6 +2352,7 @@ unit:
     Unit_hipGraphAddMemcpyNode_PeerAccessFunctional:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2164,6 +2365,7 @@ unit:
     Unit_hipGraphClone_Negative: *level_2
       tags: [graph][lifecycle]
     Unit_hipGraphClone_Functional:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
@@ -2425,6 +2627,7 @@ unit:
     Unit_hipGraphAddChildGraphNode_CmplxNstGrph_MultGPU:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2620,6 +2823,7 @@ unit:
     Unit_hipStreamBeginCapture_Positive_MultiGPU:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][capture][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -2642,6 +2846,7 @@ unit:
     Unit_hipStreamBeginCapture_MultipleStreams_ReuseEvent: *level_2
       tags: [graph][capture]
     Unit_hipGraphAddMemcpyNode1D_Functional:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][node][multigpu]
@@ -2700,6 +2905,7 @@ unit:
     Unit_hipStreamBeginCapture_EndingCapturewhenCaptureInProgress: *level_2
       tags: [graph][capture]
     Unit_hipStreamBeginCapture_MultiGPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][capture][multigpu]
@@ -2975,6 +3181,7 @@ unit:
     Unit_hipGraphLaunch_Functional_multidevice_test:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][exec][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3161,6 +3368,7 @@ unit:
     Unit_hipGraphClone_address_change_in_loop:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3171,6 +3379,7 @@ unit:
     Unit_hipGraphClone_address_change_in_thread:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3179,6 +3388,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipGraphClone_multi_GPU_test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][lifecycle][multigpu]
@@ -3215,6 +3425,7 @@ unit:
     Unit_hipGraphUpload_Functional: *level_2
       tags: [graph][exec]
     Unit_hipGraphUpload_Functional_multidevice_test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][exec][multigpu]
@@ -3309,6 +3520,7 @@ unit:
     Unit_hipGraph_PerfCheck_hipGraphExecUpdate:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][exec][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3369,6 +3581,7 @@ unit:
     Unit_hipGraphAddMemAllocNode_Functional_2:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3379,6 +3592,7 @@ unit:
     Unit_hipGraphAddMemAllocNode_Functional_3:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3387,6 +3601,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipGraphAddMemAllocNode_Functional_4:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [graph][node][multigpu]
@@ -3510,6 +3725,7 @@ unit:
     Unit_hipDrvGraphAddMemcpyNode_MulitDevice:
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [graph][node][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -3600,6 +3816,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [multigpu][kernel][language]
       tags: [multigpu]
       tags: [multigpu][kernel]
@@ -3642,9 +3859,13 @@ unit:
       disabled: [amd_windows]
   library:
     Unit_library_negative: *level_2
+      tags: [module]
     Unit_hip_library_load_co: *level_2
+      tags: [module]
     Unit_hipKernelGetParamInfo_Negative: *level_2
+      tags: [module]
     Unit_hip_library_load_rtc: *level_2
+      tags: [module]
   math:
     Unit_Device_sin_Accuracy_Positive_float: *level_2
     Unit_Device_sin_Accuracy_Positive_double: *level_2
@@ -4909,6 +5130,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -4933,6 +5155,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -4945,6 +5168,7 @@ unit:
     Unit_hipMemcpy2DToArray_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2DToArrayAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5006,6 +5230,7 @@ unit:
       tags: [hipMemcpy3D]
       tags: [hipMemcpy3D]
       tags: [hipMemcpy3D]
+      tags: [hipMemcpy3D]
       <<: *level_2
       tags: [hipMemcpy3D]
     Unit_hipMemcpy3D_ExtentValidation: *level_2
@@ -5015,6 +5240,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy3D_multiDevice_Basic_Size_Test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5044,6 +5270,7 @@ unit:
       tags: [hipMemcpy3DAsync]
       tags: [hipMemcpy3DAsync]
       tags: [hipMemcpy3DAsync]
+      tags: [hipMemcpy3DAsync]
       <<: *level_2
       tags: [hipMemcpy3DAsync]
     Unit_hipMemcpy3DAsync_ExtentValidation: *level_2
@@ -5058,6 +5285,7 @@ unit:
     Unit_hipMemcpy3DAsync_Basic_Size_Test: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyParam2D_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5095,6 +5323,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5126,6 +5355,7 @@ unit:
     Unit_hipMemcpyParam2DAsync_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2D_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5170,12 +5400,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy2DAsync_Positive_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5211,12 +5443,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpy2DFromArray_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5249,6 +5483,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5257,6 +5492,7 @@ unit:
     Unit_hipMemcpy2DFromArray_Negative: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy2DFromArrayAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5322,6 +5558,7 @@ unit:
       tags: [hipMemcpyAtoH]
       tags: [hipMemcpyAtoH]
       tags: [hipMemcpyAtoH]
+      tags: [hipMemcpyAtoH]
       <<: *level_2
       tags: [hipMemcpyAtoH]
     Unit_hipMemcpyAtoH_multiDevice_PeerDeviceContext:
@@ -5354,6 +5591,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5364,6 +5602,7 @@ unit:
     Unit_hipMemcpyAtoA_Basic: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyHtoA_Basic:
+      tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
       tags: [hipMemcpyHtoA]
@@ -5394,6 +5633,7 @@ unit:
       tags: [multigpu]
     Unit_hipHostRegister_DirectReferenceFromKernel: *level_2
     Unit_hipHostRegister_DirectReferenceMultGpu:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5488,6 +5728,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5500,6 +5741,7 @@ unit:
     Unit_hipMallocManaged_MultiChunkSingleDevice: *level_2
       tags: [memory][alloc]
     Unit_hipMallocManaged_MultiChunkMultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5521,9 +5763,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_DeviceContextChange:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5606,12 +5850,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][memset][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemset3DAsync_RegressInLoop:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5628,12 +5874,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_AccessMultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5853,12 +6101,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipPointerGetAttributes_TinyClusterAlloc:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5871,6 +6121,7 @@ unit:
     Unit_hipPointerGetAttributes_Negative: *level_2
       tags: [memory][query]
     Unit_hipPointerGetAttributes_GpuIter:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5901,12 +6152,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocManaged_MGpuMThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5979,6 +6232,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -5997,12 +6251,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemPrefetchAsync_v2_Device_Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6017,6 +6273,7 @@ unit:
     Unit_hipMemPrefetchAsync_v2_Negative: *level_2
       tags: [memory][query]
     Unit_hipMemAdvise_v2_Device_Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6044,6 +6301,7 @@ unit:
     Unit_hipMemcpyToFromSymbol_Capture: *level_2
       tags: [memory][transfer]
     Unit_hipPtrGetAttribute_Simple:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6083,6 +6341,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6093,6 +6352,7 @@ unit:
     Unit_hipDeviceSetMemPool_Basic: *level_2
       tags: [memory][alloc]
     Unit_hipDeviceSetMemPool_DestroyCurrentMempool:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6113,6 +6373,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6120,6 +6381,7 @@ unit:
       tags: [multigpu]
       disabled: [amd_windows]
     Unit_hipMemPoolSetGetAccess_Positive_P2P:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6135,6 +6397,7 @@ unit:
       # SWDEV-435667: Below tests failing randomly in stress test on 08/12/23
       disabled: [amd_windows]
     Unit_hipMemPoolSetAccess_SetAccess:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6201,6 +6464,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6241,6 +6505,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6251,12 +6516,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocFromPoolAsync_Multidevice_MultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6295,6 +6562,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6305,6 +6573,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeer_Positive_ZeroSize:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6321,12 +6590,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeer_Negative:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6341,12 +6612,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeerAsync_Positive_Default:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6365,6 +6638,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6373,6 +6647,7 @@ unit:
       # Disabling test tracked SWDEV-391555
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemcpyPeerAsync_Negative_Parameters:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6389,6 +6664,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6399,12 +6675,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyPeerAsync_StreamOnDiffDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6427,6 +6705,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6439,6 +6718,7 @@ unit:
     Unit_hipMemcpyWithStream_TestkindDefault: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyWithStream_TestkindDefaultForDtoD:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6466,6 +6746,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6488,6 +6769,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6501,9 +6783,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMemcpyDtoDAsync_Basic:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6546,6 +6830,7 @@ unit:
     Unit_hipMemcpy_MultiThreadWithSerialization: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy_PinnedRegMemWithKernelLaunch:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6701,9 +6986,11 @@ unit:
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
+      tags: [hipMallocPitch]
       <<: *level_2
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_SmallandBigChunks:
+      tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
       tags: [hipMallocPitch]
@@ -6715,6 +7002,7 @@ unit:
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_Memcpy2D: *level_2
     Unit_hipMallocPitch_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6734,6 +7022,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6742,6 +7031,7 @@ unit:
     Unit_hipMalloc3DArray_DiffSizes: *level_2
       tags: [memory][alloc]
     Unit_hipMalloc3DArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6840,6 +7130,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6850,12 +7141,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipDrvMemcpy3D_multiDevice_Basic_Size_Test:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6892,6 +7185,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -6910,6 +7204,7 @@ unit:
     Unit_hipPointerGetAttribute_KernelUpdation: *level_2
       tags: [memory][query]
     Unit_hipPointerGetAttribute_PeerGPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7033,6 +7328,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7051,6 +7347,7 @@ unit:
       # Note: Windows disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAdvise_TstAccessedByPeer:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7091,6 +7388,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7102,6 +7400,7 @@ unit:
       # Note: Windows disabled
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemAdvise_ReadMosltyMgpuTst:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7132,6 +7431,7 @@ unit:
     Unit_hipMemAdvise_Flags_Do_Not_Cause_Prefetch: *level_2
       tags: [memory][query]
     Unit_hipMemAdvise_Read_Write_After_Advise:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7191,6 +7491,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7201,12 +7502,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][alloc][multigpu]
       tags: [multigpu]
       tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipMallocAsync_Multidevice_MultiStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7231,6 +7534,7 @@ unit:
     Unit_hipStreamAttachMemAsync_Positive_Pageable: *level_2
       tags: [memory][query]
     Unit_hipStreamAttachMemAsync_Positive_AttachGlobal:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7269,6 +7573,7 @@ unit:
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipMallocMipmappedArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7339,6 +7644,7 @@ unit:
     Unit_hipMallocArray_DiffSizes: *level_2
       tags: [memory][alloc]
     Unit_hipMallocArray_MultiThread:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7435,6 +7741,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][transfer][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7453,6 +7760,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [memory][query][multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7463,6 +7771,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit_hipArrayGetDescriptor_Host2Array_Array2Host:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7499,27 +7808,33 @@ unit:
       tags: [multigpu]
   module:
     Unit_hipModuleLaunchCooperativeKernel_Positive_Basic:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchCooperativeKernel_Positive_Parameters:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchCooperativeKernel_Negative_Parameters:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchCooperativeKernel_Verify_Capture: *level_2
     Unit_hipModuleLaunchKernel_Positive_Basic:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchKernel_Positive_Parameters:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleLaunchKernel_Negative_Parameters:
+      tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7531,27 +7846,36 @@ unit:
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipModuleLaunchKernel_Fntl: *level_2
+      tags: [module][launch]
     Unit_hipModuleLaunchKernel_Verify_Capture:
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipExtLaunchKernelGGL_Functional: *level_2
+      tags: [module][launch]
     Unit_hipModuleLoadDataEx_Positive_Basic:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipModuleLoadDataEx_Negative_Parameters:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipModuleLoadDataEx_Negative_Image_Is_An_Empty_String:
+      tags: [module][load]
       <<: *level_2
       # Note: Following two tests disabled due to defect - EXSWHTEC-153
       disabled: [amd_windows]
     Unit_hipGetFuncBySymbol_PositiveTest: *level_2
+      tags: [module][function]
     Unit_hipGetFuncBySymbol_NegativeTests: *level_2
+      tags: [module][function]
     Unit_hipGetFuncBySymbol_InChildProcess: *level_2
+      tags: [module][function]
     Unit_hipGetFuncBySymbol_MultiDev: *level_2
+      tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7560,6 +7884,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipGetFuncBySymbol_MultiDevMultiThread: *level_2
+      tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7568,8 +7893,11 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipModuleGetFunction_Positive_Basic: *level_2
+      tags: [module][function]
     Unit_hipModuleGetFunction_Negative_Parameters: *level_2
+      tags: [module][function]
     Unit_hipModuleGetFunction_DiffDevice: *level_2
+      tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7578,9 +7906,13 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_KerArgOptimization_Saxpy: *level_2
+      tags: [module][function]
     Unit_hipGetProcAddress_ModuleApis: *level_2
+      tags: [module][resource]
     Unit_hipGetProcAddress_ModuleApisLoadData: *level_2
+      tags: [module][resource]
     Unit_hipGetProcAddress_ModuleApisCooperativeKernels: *level_2
+      tags: [multigpu][module][resource]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7589,21 +7921,34 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipGetProcAddress_ModuleApisOccupancy: *level_2
+      tags: [module][resource]
     Unit_hipFuncGetAttribute_Positive_Basic: *level_2
+      tags: [module][function]
     Unit_hipFuncGetAttribute_Negative_Parameters: *level_2
+      tags: [module][function]
     Unit_hipHccModuleLaunchKernel_basic: *level_2
+      tags: [module][launch]
     Unit_hipHccModuleLaunchKernel_NegTst: *level_2
+      tags: [module][launch]
     Unit_hipModuleLoadFatBinary_NegativeTsts: *level_2
+      tags: [module][load]
     Unit_hipModuleLoadFatBinary_PosiiveTsts: *level_2
+      tags: [module][load]
     Unit_hipDrvLaunchKernelEx_NegTsts: *level_2
+      tags: [module][launch]
     Unit_hipDrvLaunchKernelEx_Functional: *level_2
+      tags: [module][launch]
     Unit_hipDrvLaunchKernelEx_With_Different_Kernels: *level_2
+      tags: [module][launch]
     Unit_hipDrvLaunchKernelEx_With_CooperativeKernelWithArgs:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_hipDrvLaunchKernelEx_With_MaxBlockDims: *level_2
+      tags: [module][launch]
     Unit_hipExtLaunchMultiKernelMultiDevice_Functional: *level_2
+      tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7612,44 +7957,58 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipModuleLoadData_Positive_Basic:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipModuleLoadData_Negative_Parameters:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipModuleLoadData_Negative_Image_Is_An_Empty_String:
+      tags: [module][load]
       <<: *level_2
       # Note: Following two tests disabled due to defect - EXSWHTEC-153
       disabled: [amd_windows]
     Unit_hipModuleLoadData_Functional: *level_2
+      tags: [module][load]
     Unit_hipModuleLoad_Positive_Basic:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipModuleLoad_Negative_Parameters: *level_2
+      tags: [module][load]
     Unit_hipModuleLoad_Negative_Load_From_A_File_That_Is_Not_A_Module:
+      tags: [module][load]
       <<: *level_2
       # Below tests tests fail in PSDB
       disabled: [nvidia_windows]
     Unit_hipFuncSetSharedMemConfig_functional: *level_2
+      tags: [module][function]
     Unit_hipModuleUnload_Negative_Module_Is_Nullptr:
+      tags: [module][load]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-152
       disabled: [amd_windows]
     Unit_hipModuleUnload_Negative_Double_Unload:
+      tags: [module][load]
       <<: *level_2
       # Below test fails in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/215
       <<: *disabled_nvidia
     Unit_hipModuleLoad_basic: *level_2
+      tags: [module][load]
     Unit_hipModuleGetFunctionCount_Functional:
+      tags: [module][function]
       <<: *level_2
       # (amd_linux) Rock_Linux_Failures_on_gfx94X
       # (amd_windows) Rock_Window_Failures_on_gfx1151
       disabled: [amd_linux, amd_windows]
     Unit_hipModuleGetFunctionCount_NegativeTsts: *level_2
+      tags: [module][function]
     Unit_hipModuleGetGlobal_Functional: *level_2
+      tags: [multigpu][module][function]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7658,6 +8017,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipModuleLoad_MultProcess_MultGPU: *level_2
+      tags: [multigpu][module][load]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7666,13 +8026,18 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hip_linker_spirv_input:
+      tags: [module][resource]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipLinkCreate_Negative: *level_2
+      tags: [module][resource]
     Unit_hipLinkCreate_AddLinker_CUDA_only_options: *level_2
+      tags: [module][resource]
     Unit_hipLinkAddFile_Negative: *level_2
+      tags: [module][resource]
     Unit_hipModuleLaunchCooperativeKernelMultiDevice_Positive_Basic:
+      tags: [multigpu][module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
@@ -7686,21 +8051,28 @@ unit:
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleGetGlobal_Positive_Basic: *level_2
+      tags: [module][resource]
     Unit_hipModuleGetGlobal_Positive_Parameters: *level_2
+      tags: [module][resource]
     Unit_hipModuleGetGlobal_Negative_Parameters: *level_2
+      tags: [module][resource]
     Unit_hipModuleGetGlobal_Negative_Hmod_Is_Nullptr:
+      tags: [module][resource]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-163
       disabled: [amd_windows]
     Unit_hipModuleGetGlobal_Negative_Name_Is_Empty_String:
+      tags: [module][resource]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-164
       disabled: [amd_windows]
     Unit_hipModuleGetGlobal_Negative_Dptr_And_Bytes_Are_Nullptr:
+      tags: [module][resource]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-165
       disabled: [amd_windows]
     Unit_hipModuleGetGlobal_DiffDevice: *level_2
+      tags: [multigpu][module][resource]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7709,35 +8081,46 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
     Unit_hipModule_Functional: *level_2
+      tags: [module][load]
     Unit_hipModuleGetTexRef_Positive_Basic:
+      tags: [module][resource]
       <<: *level_2
       # (amd_windows) Below tests are failing PSDB
       # (nvidia_windows) Disabling tests which no longer behave the same on nvidia platform
       <<: *disabled_windows
     Unit_hipModuleGetTexRef_Negative_Parameters:
+      tags: [module][resource]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipModuleGetTexRef_Negative_Hmod_Is_Nullptr:
+      tags: [module][resource]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-166
       disabled: [amd_windows]
     Unit_hipModuleGetTexRef_Negative_Name_Is_Empty_String:
+      tags: [module][resource]
       <<: *level_2
       # Note: Test disabled due to defect - EXSWHTEC-167
       disabled: [amd_windows]
     Unit_hipFuncSetAttribute_Basic: *level_2
+      tags: [module][function]
     Unit_hipExtModuleLaunchKernel_CheckCodeObjAttr: *level_2
+      tags: [module][launch]
     Unit_hipExtModuleLaunchKernel_NonUniformWorkGroup:
+      tags: [module][launch]
       <<: *level_2
       # Below tests fail in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/96
       disabled: [amd_windows, amd_wsl]
     Unit_hipExtModuleLaunchKernel_UniformWorkGroup: *level_2
+      tags: [module][launch]
     Unit_hipExtModuleLaunchKernel_Positive_Parameters:
+      tags: [module][launch]
       <<: *level_2
       # Rock_Window_Failures_on_gfx1151
       disabled: [amd_windows]
     Unit_hipExtModuleLaunchKernel_Negative_Parameters:
+      tags: [multigpu][module][launch]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -7749,10 +8132,12 @@ unit:
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipExtModuleLaunchKernel_Functional:
+      tags: [module][launch]
       <<: *level_2
       # SWDEV-438524: Below tests causing TDR & machine down in stress test on 15/12/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipFuncGetAttributes_basic: *level_2
+      tags: [module][function]
   multiThread:
     Unit_hipMemsetAsync_QueueJobsMultithreaded: *level_2
     Unit_hipMultiThreadDevice_Streams: *level_2
@@ -7869,6 +8254,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_Printf_PrintfStar: *level_2
@@ -7878,45 +8264,76 @@ unit:
     Unit_Printf_PrintfAltFormsTsts: *level_2
   rtc:
     Unit_hiprtc_saxpy: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_warpsize: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_functional: *level_2
+      tags: [rtc][compile]
     Unit_hipStreamCaptureRtc: *level_2
+      tags: [rtc][integration]
     Unit_hiprtc_includepath: *level_2
+      tags: [rtc][link]
     Unit_hiprtc_devicemalloc: *level_2
+      tags: [rtc][integration]
     Unit_hiprtcGetLoweredName_templateKrnls: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_cpp17: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_namehandling: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_getloweredname: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_test_hip_bfloat16: *level_2
+      tags: [rtc][header]
     Unit_RTC_LinkerAPI_Negative: *level_2
+      tags: [rtc][link]
     Unit_RTC_LinkDestroy_Negative: *level_2
+      tags: [rtc][link]
     Unit_RTC_LinkDestroy_Default:
+      tags: [rtc][link]
       <<: *level_2
       # SWDEV-450909: Test failed in stress testing
       disabled: [amd_windows]
     Unit_RTC_LinkerAPI: *level_2
+      tags: [rtc][link]
     Unit_RTC_LinkAddFile_Negative: *level_2
+      tags: [rtc][link]
     Unit_RTC_LinkAddFile_Default: *level_2
+      tags: [rtc][link]
     Unit_hiprtc_half_shuffle: *level_2
+      tags: [rtc][integration]
     Unit_hiprtc_half_shuffle_sync: *level_2
+      tags: [rtc][integration]
     Unit_Rtc_ReduceRandom:
+      tags: [rtc][compile]
       <<: *level_2
       # Rock_Linux_Failures_on_gfx94X
       disabled: [amd_linux]
     Unit_hiprtc_stdheaders:
+      tags: [rtc][header]
       <<: *level_2
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_Rtc_MathConstants_header: *level_2
+      tags: [rtc][header]
     Unit_Rtc_VectorTypes_header: *level_2
+      tags: [rtc][header]
     Unit_Rtc_MathFunctions_header: *level_2
+      tags: [rtc][header]
     Unit_Rtc_fp16_header: *level_2
+      tags: [rtc][header]
     Unit_Rtc_TextureTypes_header: *level_2
+      tags: [rtc][header]
     Unit_Rtc_HipComplex_header: *level_2
+      tags: [rtc][header]
     Unit_hipRTC_Ptrdiff_t_Check: *level_2
+      tags: [rtc][compile]
     Unit_hipRTC_Check_Ptrdiff_t_FrmChildProcess: *level_2
+      tags: [rtc][compile]
     Unit_hiprtc_bitcode_undefined_function: *level_2
+      tags: [rtc][link]
     Unit_Rtc_bfloat16_header: *level_2
+      tags: [rtc][header]
     Unit_hiprtcGpuArchComplrOptnTst: *level_2
     Unit_hiprtcGpuRdcComplrOptnTst:
       <<: *level_2
@@ -7962,6 +8379,7 @@ unit:
     Unit_hiprtcEnabledTrappingMathComplrOptnTst: *level_2
     Unit_hiprtcDisabledTrappingMathComplrOptnTst: *level_2
     Unit_hiprtcCombiComplrOptnTst:
+      tags: [rtc][compile]
       <<: *level_2
       # Below tests fail in external CI for PR https://github.com/ROCm-Developer-Tools/hip-tests/pull/327
       disabled: [amd_wsl]
@@ -8052,6 +8470,7 @@ unit:
     Unit_hipStreamGetCaptureInfo_hipStreamLegacy_CaptureInfo: *level_2
       tags: [stream]
     Unit_hipMemPrefetchAsync_Basic: *level_2
+      tags: Unit_hipMemPrefetchAsync_Basic
       tags: Unit_hipMemPrefetchAsync_Basic
       tags: Unit_hipMemPrefetchAsync_Basic
       tags: Unit_hipMemPrefetchAsync_Basic
@@ -8231,6 +8650,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][callback][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8251,6 +8671,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8263,10 +8684,12 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipStreamGetDevice_NullStream:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8293,6 +8716,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
@@ -8305,12 +8729,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       tags: [stream][multigpu]
       <<: *level_2
       tags: [multigpu]
     Unit_hipStreamLegacy_TwoThreadsEachOneDiffOperation: *level_2
       tags: [stream]
     Unit_hipStreamLegacy_TwoDevicesEachOneDiffOperation:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8343,6 +8769,7 @@ unit:
     Unit_hipStreamGetId_MultipleThreads: *level_2
       tags: [stream]
     Unit_hipStreamGetId_MultiDevice:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -8552,6 +8979,7 @@ unit:
       tags: [sync][coherency]
       tags: [sync]
     Unit_cache_coherency_gpu_gpu:
+      tags: [multigpu]
       tags: [multigpu][sync][coherency]
       tags: [multigpu]
       tags: [multigpu]
@@ -9043,6 +9471,7 @@ unit:
       tags: [sync][fence]
       tags: [sync]
     Unit___threadfence_block_Positive_Basic_Peer:
+      tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
       tags: [multigpu]
@@ -9065,6 +9494,7 @@ unit:
       tags: [sync][fence]
       tags: [sync]
     Unit___threadfence_Positive_Basic_Peer:
+      tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
       tags: [multigpu]
@@ -9075,6 +9505,7 @@ unit:
       <<: *level_2
       tags: [multigpu]
     Unit___threadfence_system_Positive_Basic_Peer:
+      tags: [multigpu]
       tags: [multigpu][sync][fence]
       tags: [multigpu]
       tags: [multigpu]
@@ -9224,6 +9655,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
@@ -9252,12 +9684,14 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2PeerPeerMemCpy:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9275,6 +9709,7 @@ unit:
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2VMMInterDevMemCpy:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
@@ -9340,6 +9775,7 @@ unit:
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
+      tags: [multigpu]
       <<: *level_2
       tags: [multigpu]
       # (amd_windows) SWDEV-444041: These tests fail in gfx1100 MGPU
@@ -9350,6 +9786,7 @@ unit:
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemMap_VMMMemoryReuse_MultiGPU:
+      tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
       tags: [multigpu]
