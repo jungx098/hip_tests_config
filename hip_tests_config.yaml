@@ -4866,7 +4866,6 @@ unit:
     Unit_hipMemcpy3D_Capture: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy3D_Basic:
-      tags: [hipMemcpy3D]
       <<: *level_2
       tags: [hipMemcpy3D]
     Unit_hipMemcpy3D_ExtentValidation: *level_2
