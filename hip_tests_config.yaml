@@ -7840,7 +7840,6 @@ unit:
       tags: [sync][coherency]
     Unit_cache_coherency_gpu_gpu:
       tags: [multigpu][sync][coherency]
-      tags: [multigpu][sync]
       <<: *level_2
   syncthreads:
     Unit___syncthreads_Positive_Basic:
@@ -8299,7 +8298,6 @@ unit:
       tags: [sync][fence]
     Unit___threadfence_block_Positive_Basic_Peer:
       tags: [multigpu][sync][fence]
-      tags: [multigpu][sync]
       <<: *level_2
     Unit___threadfence_Positive_Basic_Shared: *level_2
       tags: [sync][fence]
@@ -8311,11 +8309,9 @@ unit:
       tags: [sync][fence]
     Unit___threadfence_Positive_Basic_Peer:
       tags: [multigpu][sync][fence]
-      tags: [multigpu][sync]
       <<: *level_2
     Unit___threadfence_system_Positive_Basic_Peer:
       tags: [multigpu][sync][fence]
-      tags: [multigpu][sync]
       <<: *level_2
     Unit___threadfence_system_Positive_Basic_Host: *level_2
       tags: [sync][fence]
