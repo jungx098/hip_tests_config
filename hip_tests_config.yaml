@@ -7403,7 +7403,6 @@ unit:
     Unit_hipStreamGetCaptureInfo_hipStreamLegacy_CaptureInfo: *level_2
       tags: [stream]
     Unit_hipMemPrefetchAsync_Basic: *level_2
-      tags: Unit_hipMemPrefetchAsync_Basic
       tags: [stream]
     Unit_hipMemPoolApi_hipStreamLegacy_Basic: *level_2
     Unit_hipStreamValue_Write:
