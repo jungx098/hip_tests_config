@@ -5584,7 +5584,6 @@ unit:
       tags: [memory][alloc]
     Unit_hipMemVmm_Basic:
       tags: [vmm]
-      tags: Unit_hipMemVmm_Basic
       <<: *level_2
       # SWDEV-396616 hipMemMap returns invalid error
       disabled: [amd_windows, amd_wsl]
@@ -5678,7 +5677,6 @@ unit:
       tags: [memory][query][multigpu]
       <<: *level_2
     Unit_hipMemPoolApi_Basic: *level_2
-      tags: Unit_hipMemPoolApi_Basic
       tags: [stream]
     Unit_hipMemPoolApi_BasicAlloc:
       tags: [memory][alloc]
