@@ -8214,10 +8214,8 @@ unit:
   synchronization:
     Unit_Copy_Coherency: *level_2
       tags: [sync][coherency]
-      tags: [sync]
     Unit_cache_coherency_cpu_gpu: *level_2
       tags: [sync][coherency]
-      tags: [sync]
     Unit_cache_coherency_gpu_gpu:
       tags: [multigpu]
       tags: [multigpu][sync][coherency]
@@ -8227,82 +8225,60 @@ unit:
   syncthreads:
     Unit___syncthreads_Positive_Basic:
       tags: [device_lib][sync][block]
-      tags: [sync]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit___syncthreads_count_Positive_Basic:
       tags: [device_lib][sync][block]
-      tags: [sync]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit___syncthreads_count_Positive_Predicate_Zero: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_count_Positive_Predicate_One: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_count_Positive_Predicate_OddEven: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_count_Positive_Predicate_Negative: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_count_Positive_Predicate_Id: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_count_Negative_Parameters_RTC: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Positive_Basic:
       tags: [device_lib][sync][block]
-      tags: [sync]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit___syncthreads_and_Positive_Predicate_Zero: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Positive_Predicate_One: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Positive_Predicate_OddEven: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Positive_Predicate_Negative: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Positive_Predicate_Id: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_and_Negative_Parameters_RTC: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Positive_Basic:
       tags: [device_lib][sync][block]
-      tags: [sync]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit___syncthreads_or_Positive_Predicate_Zero: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Positive_Predicate_One: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Positive_Predicate_OddEven: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Positive_Predicate_Negative: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Positive_Predicate_Id: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
     Unit___syncthreads_or_Negative_Parameters_RTC: *level_2
       tags: [device_lib][sync][block]
-      tags: [sync]
   texture:
     Unit_hipCreateTextureObject_ArgValidation: *level_2
       tags: [texture][texobj]
@@ -8695,16 +8671,12 @@ unit:
   threadfence:
     Unit___threadfence_block_Positive_Basic_Shared: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_block_Positive_Basic_Global: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_block_Positive_Basic_Pinned: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_block_Positive_Basic_Managed: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_block_Positive_Basic_Peer:
       tags: [multigpu]
       tags: [multigpu][sync][fence]
@@ -8713,16 +8685,12 @@ unit:
       tags: [multigpu]
     Unit___threadfence_Positive_Basic_Shared: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_Positive_Basic_Global: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_Positive_Basic_Pinned: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_Positive_Basic_Managed: *level_2
       tags: [sync][fence]
-      tags: [sync]
     Unit___threadfence_Positive_Basic_Peer:
       tags: [multigpu]
       tags: [multigpu][sync][fence]
@@ -8737,7 +8705,6 @@ unit:
       tags: [multigpu]
     Unit___threadfence_system_Positive_Basic_Host: *level_2
       tags: [sync][fence]
-      tags: [sync]
   vector_types:
     Unit_make_vector_SanityCheck_Basic_Host: *level_2
     Unit_make_vector_SanityCheck_Basic_Device: *level_2
