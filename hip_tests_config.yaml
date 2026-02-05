@@ -6126,11 +6126,9 @@ unit:
     Unit_hipMemAllocPitch_Negative: *level_2
       tags: [memory][alloc]
     Unit_hipMallocPitch_Basic:
-      tags: [hipMallocPitch]
       <<: *level_2
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_SmallandBigChunks:
-      tags: [hipMallocPitch]
       <<: *level_2
       tags: [hipMallocPitch]
     Unit_hipMallocPitch_Memcpy2D: *level_2
