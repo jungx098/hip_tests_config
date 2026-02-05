@@ -1757,11 +1757,9 @@ unit:
       tags: [kernel][launch]
     Unit_hipExtLaunchMultiKernelMultiDevice_Positive_Basic:
       tags: [multigpu][kernel][launch]
-      tags: [multigpu][kernel]
       <<: *level_2
     Unit_hipExtLaunchMultiKernelMultiDevice_Negative_Parameters:
       tags: [multigpu][kernel][launch]
-      tags: [multigpu][kernel]
       <<: *level_2
       # NOTE: The following test is disabled due to defect - EXSWHTEC-244
       disabled: [amd_linux, amd_windows]
@@ -3284,7 +3282,6 @@ unit:
       tags: [kernel][launch]
     Unit_kernel_ChkPrintf:
       tags: [multigpu][kernel][language]
-      tags: [multigpu][kernel]
       <<: *level_2
     Unit_hipExtLaunchKernelGGL:
       tags: [kernel][launch]
@@ -4886,7 +4883,6 @@ unit:
     Unit_hipMemcpy3DAsync_Capture: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpy3DAsync_Basic:
-      tags: [hipMemcpy3DAsync]
       <<: *level_2
       tags: [hipMemcpy3DAsync]
     Unit_hipMemcpy3DAsync_ExtentValidation: *level_2
@@ -5092,7 +5088,6 @@ unit:
     Unit_hipMemcpyDtoA_BasicPositive: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyAtoH_Basic:
-      tags: [hipMemcpyAtoH]
       <<: *level_2
       tags: [hipMemcpyAtoH]
     Unit_hipMemcpyAtoH_multiDevice_PeerDeviceContext:
@@ -5128,7 +5123,6 @@ unit:
     Unit_hipMemcpyAtoA_Basic: *level_2
       tags: [memory][transfer]
     Unit_hipMemcpyHtoA_Basic:
-      tags: [hipMemcpyHtoA]
       <<: *level_2
       tags: [hipMemcpyHtoA]
     Unit_hipMemcpyHtoA_multiDevice_PeerDeviceContext:
