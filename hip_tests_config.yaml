@@ -1717,22 +1717,17 @@ unit:
   executionControl:
     Unit_hipFuncGetAttributes_Positive_Basic:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # NOTE: The following test is disabled due to defect - EXSWHTEC-242
       disabled: [amd_linux, amd_windows]
     Unit_hipFuncGetAttributes_Negative_Parameters: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipLaunchKernel_Positive_Basic: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernel_Positive_Parameters: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernel_Negative_Parameters:
       tags: [kernel][launch]
-      tags: [kernel]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
@@ -1754,16 +1749,12 @@ unit:
       tags: [kernel]
     Unit_hipExtLaunchKernel_Positive_Basic: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipExtLaunchKernel_Positive_Parameters: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipExtLaunchKernel_Negative_Parameters: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipExtLaunchKernel_capturehipExtLaunchKernel: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipExtLaunchMultiKernelMultiDevice_Positive_Basic:
       tags: [multigpu][kernel][launch]
       tags: [multigpu][kernel]
@@ -1776,16 +1767,12 @@ unit:
       disabled: [amd_linux, amd_windows]
     Unit_hipExtLaunchMultiKernelMultiDevice_Negative_MultiKernelSameDevice: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchByPtr_Positive_Basic: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchByPtr_Negative_Parameters: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit___hipPushCallConfiguration_Positive_Basic: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchByPtr_Verify_Capture: *level_2
     Unit_hipGetProcAddress_KernelLaunchApis: *level_2
       tags: [kernel]
@@ -1795,52 +1782,40 @@ unit:
       tags: [kernel]
     Unit_hipFuncSetCacheConfig_Positive_Basic:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipFuncSetCacheConfig_Negative_Parameters:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipFuncSetCacheConfig_Negative_Not_Supported: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetSharedMemConfig_Positive_Basic:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipFuncSetSharedMemConfig_Negative_Parameters: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetSharedMemConfig_Negative_Not_Supported: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetAttribute_Positive_MaxDynamicSharedMemorySize: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetAttribute_Positive_PreferredSharedMemoryCarveout:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Note: intermittent Seg fault failure
       disabled: [amd_windows, amd_wsl]
     Unit_hipFuncSetAttribute_Positive_Parameters: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetAttribute_Negative_Parameters: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetAttribute_Positive_MaxDynamicSharedMemorySize_Not_Supported: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipFuncSetAttribute_Positive_PreferredSharedMemoryCarveout_Not_Supported: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
   g++:
     Unit_hipMalloc_gpptest: *level_2
       tags: [compiler]
@@ -3264,105 +3239,76 @@ unit:
   kernel:
     Unit_hipMemFaultStackAllocation_Check: *level_2
       tags: [kernel][memory]
-      tags: [kernel]
     Unit_hipLaunchBounds_With_maxThreadsPerBlock_Check: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipLaunchBounds_With_maxThreadsPerBlock_blocksPerCU_Check: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_hipDynamicShared:
       tags: [kernel][memory]
-      tags: [kernel]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_hipDynamicShared2: *level_2
       tags: [kernel][memory]
-      tags: [kernel]
     Unit_hipEmptyKernel: *level_2
       tags: [kernel][language]
-      tags: [kernel]
     Unit_hipGridLaunch: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLanguageExtensions: *level_2
       tags: [kernel][language]
-      tags: [kernel]
     Unit_hipLaunchParm: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchParmFunctor: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_kernel_chkConstantViaKernel: *level_2
       tags: [kernel][memory]
-      tags: [kernel]
     Unit_kernel_chkGlobalArrAndGlobalVaribleViaKernelFn: *level_2
       tags: [kernel][memory]
-      tags: [kernel]
     Unit_kernel_MemoryOperationsViaKernels: *level_2
       tags: [kernel][memory]
-      tags: [kernel]
     Unit_kernel_LaunchBounds_Functional: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_kernel_Assign_threadIdx_to_auto: *level_2
       tags: [kernel][language]
-      tags: [kernel]
     Unit_hipLaunchKernelExC_NegetiveTsts: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernelEx_NegetiveTsts: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernelEx_Functional: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernelEx_With_Different_Kernels: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernelEx_With_CooperativeKernelWithArgs: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipLaunchKernelEx_With_MaxBlockDims: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_kernel_ChkPrintf:
       tags: [multigpu][kernel][language]
       tags: [multigpu][kernel]
       <<: *level_2
     Unit_hipExtLaunchKernelGGL:
       tags: [kernel][launch]
-      tags: [kernel]
       <<: *level_2
       # SWDEV-438524: Below tests causing TDR & machine down in stress test on 15/12/23
       disabled: [amd_windows, amd_wsl]
     Unit_hipSetupArgument_Simple: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_hipSetupArgument_Execute_Kernel_And_Check_Result: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_ConfigureCall: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
     Unit_ConfigureCall_CheckParams: *level_2
       tags: [kernel][launch]
-      tags: [kernel]
   launchBounds:
     Unit_Kernel_Launch_bounds_Positive_Basic: *level_2
       tags: [kernel][attributes]
-      tags: [kernel]
     Unit_Kernel_Launch_bounds_Negative_OutOfBounds:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
     Unit_Kernel_Launch_bounds_Negative_Parameters_RTC:
       tags: [kernel][attributes]
-      tags: [kernel]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
