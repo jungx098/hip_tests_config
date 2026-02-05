@@ -581,14 +581,12 @@ unit:
     Unit_hipCGMultiGridGroupType_Basic:
       tags: [multigpu]
       tags: [multigpu][cooperative][groups]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
     Unit_hipCGMultiGridGroupType_Barrier:
       tags: [multigpu]
       tags: [multigpu][cooperative][groups]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
@@ -619,21 +617,18 @@ unit:
     Unit_hipLaunchCooperativeKernelMultiDevice_Basic:
       tags: [multigpu]
       tags: [multigpu][cooperative][launch]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Getters_Positive_Basic:
       tags: [multigpu]
       tags: [multigpu][cooperative][groups]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
     Unit_Multi_Grid_Group_Getters_Positive_Base_Type:
       tags: [multigpu]
       tags: [multigpu][cooperative][groups]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
@@ -645,7 +640,6 @@ unit:
     Unit_Multi_Grid_Group_Positive_Sync:
       tags: [multigpu]
       tags: [multigpu][cooperative][groups]
-      tags: [multigpu]
       tags: [multigpu][cooperativeLaunch]
       <<: *level_2
       tags: [multigpu]
@@ -3459,7 +3453,6 @@ unit:
     Unit_kernel_ChkPrintf:
       tags: [multigpu]
       tags: [multigpu][kernel][language]
-      tags: [multigpu]
       tags: [multigpu][kernel]
       <<: *level_2
       tags: [multigpu]
@@ -7146,7 +7139,6 @@ unit:
     Unit_hipModuleLaunchKernel_Negative_Parameters:
       tags: [multigpu]
       tags: [multigpu][module][launch]
-      tags: [multigpu]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
@@ -7182,11 +7174,9 @@ unit:
     Unit_hipGetFuncBySymbol_MultiDev: *level_2
       tags: [multigpu]
       tags: [multigpu][module][function]
-      tags: [multigpu]
     Unit_hipGetFuncBySymbol_MultiDevMultiThread: *level_2
       tags: [multigpu]
       tags: [multigpu][module][function]
-      tags: [multigpu]
     Unit_hipModuleGetFunction_Positive_Basic: *level_2
       tags: [module][function]
     Unit_hipModuleGetFunction_Negative_Parameters: *level_2
@@ -7194,7 +7184,6 @@ unit:
     Unit_hipModuleGetFunction_DiffDevice: *level_2
       tags: [multigpu]
       tags: [multigpu][module][function]
-      tags: [multigpu]
     Unit_KerArgOptimization_Saxpy: *level_2
       tags: [module][function]
     Unit_hipGetProcAddress_ModuleApis: *level_2
@@ -7204,7 +7193,6 @@ unit:
     Unit_hipGetProcAddress_ModuleApisCooperativeKernels: *level_2
       tags: [multigpu]
       tags: [multigpu][module][resource]
-      tags: [multigpu]
     Unit_hipGetProcAddress_ModuleApisOccupancy: *level_2
       tags: [module][resource]
     Unit_hipFuncGetAttribute_Positive_Basic: *level_2
@@ -7235,7 +7223,6 @@ unit:
     Unit_hipExtLaunchMultiKernelMultiDevice_Functional: *level_2
       tags: [multigpu]
       tags: [multigpu][module][launch]
-      tags: [multigpu]
     Unit_hipModuleLoadData_Positive_Basic:
       tags: [module][load]
       <<: *level_2
@@ -7290,11 +7277,9 @@ unit:
     Unit_hipModuleGetGlobal_Functional: *level_2
       tags: [multigpu]
       tags: [multigpu][module][function]
-      tags: [multigpu]
     Unit_hipModuleLoad_MultProcess_MultGPU: *level_2
       tags: [multigpu]
       tags: [multigpu][module][load]
-      tags: [multigpu]
     Unit_hip_linker_spirv_input:
       tags: [module][resource]
       <<: *level_2
@@ -7344,7 +7329,6 @@ unit:
     Unit_hipModuleGetGlobal_DiffDevice: *level_2
       tags: [multigpu]
       tags: [multigpu][module][resource]
-      tags: [multigpu]
     Unit_hipModule_Functional: *level_2
       tags: [module][load]
     Unit_hipModuleGetTexRef_Positive_Basic:
@@ -7387,7 +7371,6 @@ unit:
     Unit_hipExtModuleLaunchKernel_Negative_Parameters:
       tags: [multigpu]
       tags: [multigpu][module][launch]
-      tags: [multigpu]
       <<: *level_2
       # Below tests are failing PSDB
       disabled: [amd_windows]
@@ -8238,7 +8221,6 @@ unit:
     Unit_cache_coherency_gpu_gpu:
       tags: [multigpu]
       tags: [multigpu][sync][coherency]
-      tags: [multigpu]
       tags: [multigpu][sync]
       <<: *level_2
       tags: [multigpu]
@@ -8726,7 +8708,6 @@ unit:
     Unit___threadfence_block_Positive_Basic_Peer:
       tags: [multigpu]
       tags: [multigpu][sync][fence]
-      tags: [multigpu]
       tags: [multigpu][sync]
       <<: *level_2
       tags: [multigpu]
@@ -8745,14 +8726,12 @@ unit:
     Unit___threadfence_Positive_Basic_Peer:
       tags: [multigpu]
       tags: [multigpu][sync][fence]
-      tags: [multigpu]
       tags: [multigpu][sync]
       <<: *level_2
       tags: [multigpu]
     Unit___threadfence_system_Positive_Basic_Peer:
       tags: [multigpu]
       tags: [multigpu][sync][fence]
-      tags: [multigpu]
       tags: [multigpu][sync]
       <<: *level_2
       tags: [multigpu]
