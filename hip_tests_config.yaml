@@ -8820,11 +8820,9 @@ unit:
     Unit_hipMemGetHandleForAddressRange_DeviceMemory_InAnotherDevice:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
     Unit_hipMemGetHandleForAddressRange_VM_InAnotherDevice:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
     Unit_hipMemGetHandleForAddressRange_MulProc_Socket_DeviceMem: *level_2
       tags: [vmm]
     Unit_hipMemGetHandleForAddressRange_MulProc_Socket_VM: *level_2
@@ -8923,7 +8921,6 @@ unit:
     Unit_hipMemSetAccess_FuncTstOnMultDev:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
@@ -8948,14 +8945,12 @@ unit:
     Unit_hipMemSetAccess_Vmm2PeerDevMemCpy:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
     Unit_hipMemSetAccess_Vmm2PeerPeerMemCpy:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_wsl]
     Unit_hipMemSetAccess_Vmm2VMMMemCpy:
@@ -8967,7 +8962,6 @@ unit:
     Unit_hipMemSetAccess_Vmm2VMMInterDevMemCpy:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
@@ -9031,7 +9025,6 @@ unit:
     Unit_hipMemMap_PhysicalMemoryReuse_MultiDev:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # (amd_windows) SWDEV-444041: These tests fail in gfx1100 MGPU
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
@@ -9043,7 +9036,6 @@ unit:
     Unit_hipMemMap_VMMMemoryReuse_MultiGPU:
       tags: [multigpu][vmm]
       <<: *level_2
-      tags: [multigpu]
       # (amd_windows) SWDEV-396615 mGPUs not considered correctly
       # (amd_wsl) Patch which removes the typetraits implementation from std namespace in hiprtc is reverted
       disabled: [amd_windows, amd_wsl]
