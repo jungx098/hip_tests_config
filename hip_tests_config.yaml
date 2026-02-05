@@ -9205,40 +9205,28 @@ unit:
   warp:
     Unit_Warp_Ballot_Positive_Basic: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_Warp_Vote_Any_Positive_Basic: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_Warp_Vote_All_Positive_Basic: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_hipMatchSync_All: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_hipMatchSync_Any: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_hipShflSync_Down: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipShflSync_Up: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipShflSync_Xor: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipShflSync: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipVoteSync_Any: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_hipVoteSync_All: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_hipVoteSync_Ballot: *level_2
       tags: [device_lib][warp][vote]
-      tags: [warp]
     Unit_Warp_Shfl_Positive_Basic:
       <<: *level_2
       # SWDEV-434171: Below tests took long time to complete in stress test on 17/11/23
@@ -9259,22 +9247,16 @@ unit:
     Unit_hipReduceMultipleMasks: *level_2
     Unit_hipReduceRandom: *level_2
       tags: [device_lib][warp][reduce]
-      tags: [warp]
     Unit_runTestShfl_up: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_runTestShfl_Down: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_runTestShfl_Xor: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipShflTests: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
     Unit_hipShflUndefArgs: *level_2
       tags: [device_lib][warp][shuffle]
-      tags: [warp]
 
 ABM:
   ABM_AddKernel_MultiTypeMultiSize: *level_2
