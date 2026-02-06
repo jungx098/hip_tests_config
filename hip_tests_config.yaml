@@ -6251,7 +6251,8 @@ unit:
     Unit_hipMemcpyHtoAAsync_MultiDevice:
       tags: [memory, transfer, multigpu]
       <<: *level_2
-    UnitHipMemcpyHtoAAsync_Capture: *level_2
+    UnitHipMemcpyHtoAAsync_Capture:
+      <<: *level_2
       tags: [memory, transfer]
     Unit_hipMemcpyAtoA_Basic:
       <<: *level_2
